@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
+		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
+		C9B374D71B059BEF00BFD4B6 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */; };
+		C9B374DA1B059BEF00BFD4B6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */; };
+		C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */; };
+		C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */; };
+		C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */; };
+		C9B374EE1B059BF000BFD4B6 /* Big_Red_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9B374E81B059BF000BFD4B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9B374C31B059BEF00BFD4B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B374CA1B059BEF00BFD4B6;
+			remoteInfo = "Big Red App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Red App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B374CF1B059BEF00BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C9B374D51B059BEF00BFD4B6 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C9B374D81B059BEF00BFD4B6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C9B374DC1B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C9B374E11B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Red AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B374EC1B059BF000BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Big_Red_AppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9B374C81B059BEF00BFD4B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B374E41B059BF000BFD4B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9B374C21B059BEF00BFD4B6 = {
+			isa = PBXGroup;
+			children = (
+				C9B374CD1B059BEF00BFD4B6 /* Big Red App */,
+				C9B374EA1B059BF000BFD4B6 /* Big Red AppTests */,
+				C9B374CC1B059BEF00BFD4B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9B374CC1B059BEF00BFD4B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */,
+				C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9B374CD1B059BEF00BFD4B6 /* Big Red App */ = {
+			isa = PBXGroup;
+			children = (
+				C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */,
+				C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */,
+				C9B374D51B059BEF00BFD4B6 /* MasterViewController.h */,
+				C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */,
+				C9B374D81B059BEF00BFD4B6 /* DetailViewController.h */,
+				C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */,
+				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
+				C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */,
+				C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */,
+				C9B374CE1B059BEF00BFD4B6 /* Supporting Files */,
+			);
+			path = "Big Red App";
+			sourceTree = "<group>";
+		};
+		C9B374CE1B059BEF00BFD4B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9B374CF1B059BEF00BFD4B6 /* Info.plist */,
+				C9B374D01B059BEF00BFD4B6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9B374EA1B059BF000BFD4B6 /* Big Red AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */,
+				C9B374EB1B059BF000BFD4B6 /* Supporting Files */,
+			);
+			path = "Big Red AppTests";
+			sourceTree = "<group>";
+		};
+		C9B374EB1B059BF000BFD4B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9B374EC1B059BF000BFD4B6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9B374CA1B059BEF00BFD4B6 /* Big Red App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red App" */;
+			buildPhases = (
+				C9B374C71B059BEF00BFD4B6 /* Sources */,
+				C9B374C81B059BEF00BFD4B6 /* Frameworks */,
+				C9B374C91B059BEF00BFD4B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Big Red App";
+			productName = "Big Red App";
+			productReference = C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9B374E61B059BF000BFD4B6 /* Big Red AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red AppTests" */;
+			buildPhases = (
+				C9B374E31B059BF000BFD4B6 /* Sources */,
+				C9B374E41B059BF000BFD4B6 /* Frameworks */,
+				C9B374E51B059BF000BFD4B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9B374E91B059BF000BFD4B6 /* PBXTargetDependency */,
+			);
+			name = "Big Red AppTests";
+			productName = "Big Red AppTests";
+			productReference = C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9B374C31B059BEF00BFD4B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = OpenSourceCornell;
+				TargetAttributes = {
+					C9B374CA1B059BEF00BFD4B6 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					C9B374E61B059BF000BFD4B6 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = C9B374CA1B059BEF00BFD4B6;
+					};
+				};
+			};
+			buildConfigurationList = C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "Big Red App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9B374C21B059BEF00BFD4B6;
+			productRefGroup = C9B374CC1B059BEF00BFD4B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9B374CA1B059BEF00BFD4B6 /* Big Red App */,
+				C9B374E61B059BF000BFD4B6 /* Big Red AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9B374C91B059BEF00BFD4B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */,
+				C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */,
+				C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B374E51B059BF000BFD4B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9B374C71B059BEF00BFD4B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
+				C9B374D71B059BEF00BFD4B6 /* MasterViewController.m in Sources */,
+				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
+				C9B374DA1B059BEF00BFD4B6 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B374E31B059BF000BFD4B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B374EE1B059BF000BFD4B6 /* Big_Red_AppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9B374E91B059BF000BFD4B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B374CA1B059BEF00BFD4B6 /* Big Red App */;
+			targetProxy = C9B374E81B059BF000BFD4B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B374DC1B059BEF00BFD4B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B374E11B059BEF00BFD4B6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9B374EF1B059BF000BFD4B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C9B374F01B059BF000BFD4B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9B374F21B059BF000BFD4B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Big Red App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C9B374F31B059BF000BFD4B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Big Red App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C9B374F51B059BF000BFD4B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Big Red AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
+			};
+			name = Debug;
+		};
+		C9B374F61B059BF000BFD4B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Big Red AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "Big Red App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B374EF1B059BF000BFD4B6 /* Debug */,
+				C9B374F01B059BF000BFD4B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B374F21B059BF000BFD4B6 /* Debug */,
+				C9B374F31B059BF000BFD4B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9B374F51B059BF000BFD4B6 /* Debug */,
+				C9B374F61B059BF000BFD4B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9B374C31B059BEF00BFD4B6 /* Project object */;
+}
