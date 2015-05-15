@@ -14,7 +14,7 @@
 		C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */; };
 		C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */; };
 		C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */; };
-		C9B374EE1B059BF000BFD4B6 /* Big_Red_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */; };
+		C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +40,9 @@
 		C9B374DC1B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9B374E11B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Red AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B374E71B059BF000BFD4B6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374EC1B059BF000BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Big_Red_AppTests.m; sourceTree = "<group>"; };
+		C9B374ED1B059BF000BFD4B6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B374CD1B059BEF00BFD4B6 /* Big Red App */,
-				C9B374EA1B059BF000BFD4B6 /* Big Red AppTests */,
+				C9B374EA1B059BF000BFD4B6 /* Tests */,
 				C9B374CC1B059BEF00BFD4B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */,
-				C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */,
+				C9B374E71B059BF000BFD4B6 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,13 +107,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C9B374EA1B059BF000BFD4B6 /* Big Red AppTests */ = {
+		C9B374EA1B059BF000BFD4B6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C9B374ED1B059BF000BFD4B6 /* Big_Red_AppTests.m */,
+				C9B374ED1B059BF000BFD4B6 /* Tests.m */,
 				C9B374EB1B059BF000BFD4B6 /* Supporting Files */,
 			);
-			path = "Big Red AppTests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		C9B374EB1B059BF000BFD4B6 /* Supporting Files */ = {
@@ -122,6 +122,7 @@
 				C9B374EC1B059BF000BFD4B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = ../Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +145,9 @@
 			productReference = C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C9B374E61B059BF000BFD4B6 /* Big Red AppTests */ = {
+		C9B374E61B059BF000BFD4B6 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red AppTests" */;
+			buildConfigurationList = C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				C9B374E31B059BF000BFD4B6 /* Sources */,
 				C9B374E41B059BF000BFD4B6 /* Frameworks */,
@@ -157,9 +158,9 @@
 			dependencies = (
 				C9B374E91B059BF000BFD4B6 /* PBXTargetDependency */,
 			);
-			name = "Big Red AppTests";
+			name = Tests;
 			productName = "Big Red AppTests";
-			productReference = C9B374E71B059BF000BFD4B6 /* Big Red AppTests.xctest */;
+			productReference = C9B374E71B059BF000BFD4B6 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -194,7 +195,7 @@
 			projectRoot = "";
 			targets = (
 				C9B374CA1B059BEF00BFD4B6 /* Big Red App */,
-				C9B374E61B059BF000BFD4B6 /* Big Red AppTests */,
+				C9B374E61B059BF000BFD4B6 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B374EE1B059BF000BFD4B6 /* Big_Red_AppTests.m in Sources */,
+				C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +382,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Big Red AppTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
@@ -396,7 +397,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Big Red AppTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
@@ -423,7 +424,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red AppTests" */ = {
+		C9B374F41B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9B374F51B059BF000BFD4B6 /* Debug */,
