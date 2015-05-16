@@ -44,7 +44,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Cells comes from the nib file.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [self formatName:[dataSource getNameForLocationIndex:indexPath.row]];
+    cell.textLabel.text = [self formatName:[dataSource getNameForLocationIndex:(int)indexPath.row]];
     return cell;
 }
 
@@ -57,7 +57,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        [[segue destinationViewController] setDetailItem:[dataSource getNameForLocationIndex:indexPath.row]];
+        [[segue destinationViewController] setDetailItem:[dataSource getNameForLocationIndex:(int)indexPath.row]];
     }
 }
 

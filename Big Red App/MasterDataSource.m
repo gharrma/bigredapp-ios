@@ -40,7 +40,7 @@
 }
 
 - (int)getLocationCount {
-    return [diningLocations count];
+    return (int)[diningLocations count];
 }
 
 - (NSString *)getNameForLocationIndex:(int)cell {
