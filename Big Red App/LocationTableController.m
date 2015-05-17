@@ -86,17 +86,18 @@
     
     // Keep certain names shorter, add in apostrophes, etc.
     // TODO: Choose better nicknames eventually
-    NSDictionary *nicknames =  @{@"104west":                            @"104west!",
-                                 @"amit_bhatia_libe_cafe":              @"amit_bhatia's_libe_cafe",
-                                 @"bears_den":                          @"bear's_den",
-                                 @"carols_cafe":                        @"carol's_café",
-                                 @"goldies":                            @"goldie's",
-                                 @"jansens_dining_room_bethe_house":    @"bethe_house_dining_room",
-                                 @"jansens_market":                     @"jansen's_market",
-                                 @"marthas_cafe":                       @"martha's_cafe",
-                                 @"north_star":                         @"north_star_dining_room",
-                                 @"robert_purcell_marketplace_eatery":  @"robert_purcell_dining_room",
-                                 @"rustys":                             @"rusty's"};
+    NSDictionary *nicknames =
+  @{@"104west":                            @"104west!",
+    @"amit_bhatia_libe_cafe":              @"amit_bhatia's_libe_cafe",
+    @"bears_den":                          @"bear's_den",
+    @"carols_cafe":                        @"carol's_café",
+    @"goldies":                            @"goldie's",
+    @"jansens_dining_room_bethe_house":    @"bethe_house_dining_room",
+    @"jansens_market":                     @"jansen's_market",
+    @"marthas_cafe":                       @"martha's_cafe",
+    @"north_star":                         @"north_star_dining_room",
+    @"robert_purcell_marketplace_eatery":  @"robert_purcell_dining_room",
+    @"rustys":                             @"rusty's"};
     NSString *nickname = [nicknames objectForKey:name];
     if (nickname) name = nickname;
     

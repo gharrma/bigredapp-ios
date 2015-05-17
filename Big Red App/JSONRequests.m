@@ -2,6 +2,7 @@
 #import "Tools.h"
 
 static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/dining";
+static int const TIMEOUT_LENGTH = 10;
 
 
 /** Provides methods for getting data from the RedAPI. */
@@ -23,7 +24,9 @@ static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/dining";
 /** Return a collection object representing the JSON object found at the given path appended to base URL.
     This should be called on a background thread! Precondition: error is initially null. */
 + (id)fetchJsonObjectAtPath:(NSString *)path error:(NSError **)error {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[BASE_URL stringByAppendingString:path]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[BASE_URL stringByAppendingString:path]]
+                                             cachePolicy:0
+                                         timeoutInterval:TIMEOUT_LENGTH];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:error];
     if (*error) return nil; // Network error
     
