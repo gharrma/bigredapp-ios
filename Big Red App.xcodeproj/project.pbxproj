@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
 		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
-		C9B374D71B059BEF00BFD4B6 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */; };
-		C9B374DA1B059BEF00BFD4B6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */; };
+		C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */; };
+		C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */; };
 		C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */; };
 		C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */; };
 		C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */; };
 		C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Tests.m */; };
-		C9B374F91B06942F00BFD4B6 /* MasterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374F81B06942F00BFD4B6 /* MasterDataSource.m */; };
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
 /* End PBXBuildFile section */
 
@@ -35,18 +34,16 @@
 		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9B374D51B059BEF00BFD4B6 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		C9B374D81B059BEF00BFD4B6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C9B374D51B059BEF00BFD4B6 /* LocationTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTableController.h; sourceTree = "<group>"; };
+		C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTableController.m; sourceTree = "<group>"; };
+		C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C9B374DC1B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9B374E11B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C9B374E71B059BF000BFD4B6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374EC1B059BF000BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B374ED1B059BF000BFD4B6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		C9B374F71B06942F00BFD4B6 /* MasterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterDataSource.h; sourceTree = "<group>"; };
-		C9B374F81B06942F00BFD4B6 /* MasterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterDataSource.m; sourceTree = "<group>"; };
 		C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequests.h; sourceTree = "<group>"; };
 		C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRequests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,14 +89,12 @@
 			children = (
 				C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */,
 				C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */,
-				C9B374D51B059BEF00BFD4B6 /* MasterViewController.h */,
-				C9B374D61B059BEF00BFD4B6 /* MasterViewController.m */,
-				C9B374F71B06942F00BFD4B6 /* MasterDataSource.h */,
-				C9B374F81B06942F00BFD4B6 /* MasterDataSource.m */,
-				C9B374D81B059BEF00BFD4B6 /* DetailViewController.h */,
-				C9B374D91B059BEF00BFD4B6 /* DetailViewController.m */,
 				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
 				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
+				C9B374D51B059BEF00BFD4B6 /* LocationTableController.h */,
+				C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */,
+				C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */,
+				C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */,
 				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
 				C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */,
 				C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */,
@@ -236,11 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
-				C9B374D71B059BEF00BFD4B6 /* MasterViewController.m in Sources */,
+				C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
-				C9B374DA1B059BEF00BFD4B6 /* DetailViewController.m in Sources */,
-				C9B374F91B06942F00BFD4B6 /* MasterDataSource.m in Sources */,
+				C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

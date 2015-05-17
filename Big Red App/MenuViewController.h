@@ -1,9 +1,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DetailViewController : UIViewController
+@interface MenuViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+- (void)setDiningLocation:(NSString *)location;
+
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

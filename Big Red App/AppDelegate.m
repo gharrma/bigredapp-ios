@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "MenuViewController.h"
 
 
 @implementation AppDelegate
