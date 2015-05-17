@@ -1,4 +1,5 @@
 #import "JSONRequests.h"
+#import "Tools.h"
 
 static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/dining";
 

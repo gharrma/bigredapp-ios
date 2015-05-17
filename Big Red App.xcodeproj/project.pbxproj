@@ -16,6 +16,7 @@
 		C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */; };
 		C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Tests.m */; };
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
+		C9DBEB1A1B083839000EF690 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB191B083839000EF690 /* Tools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		C9B374ED1B059BF000BFD4B6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequests.h; sourceTree = "<group>"; };
 		C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRequests.m; sourceTree = "<group>"; };
+		C9DBEB181B083839000EF690 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		C9DBEB191B083839000EF690 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */,
 				C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */,
 				C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */,
+				C9DBEB181B083839000EF690 /* Tools.h */,
+				C9DBEB191B083839000EF690 /* Tools.m */,
 				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
 				C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */,
 				C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */,
@@ -233,6 +238,7 @@
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
 				C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
+				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
 				C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */,
 			);

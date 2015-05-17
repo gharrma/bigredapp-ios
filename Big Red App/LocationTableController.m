@@ -1,6 +1,7 @@
 #import "LocationTableController.h"
 #import "MenuViewController.h"
 #import "JSONRequests.h"
+#import "Tools.h"
 @import UIKit;
 
 
@@ -20,6 +21,13 @@
 // Initial setup after loading the view.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Initialize pull-to-refresh
+    self.refreshControl = [UIRefreshControl new];
+    self.refreshControl.tintColor = [Tools getCornellRed];
+    [self.refreshControl addTarget:self action:@selector(getDiningLocations) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl beginRefreshing];
+    
     [self getDiningLocations];
 }
 
@@ -31,23 +39,28 @@
 # pragma mark - Data updates
 
 /** Get dining locations on a background thread, and reload view when finished. */
+// TODO: Set a timout for requests
 - (void)getDiningLocations {
     dispatch_async(BACKGROUND_THREAD, ^{
         NSError *error = nil;
         NSArray *locations = [JSONRequests fetchDiningHallLocations:&error];
         
         dispatch_async(APPLICATION_THREAD, ^{
-            if (error) [self reportFetchError:error];
+            
+            // Report error if applicable
+            if (error) {
+                NSLog(@"Fetch Error Reported: %@", [error localizedDescription]); // TODO :)
+                [self.refreshControl endRefreshing];
+            }
+            
+            // Update view if no error
             else {
                 diningLocations = locations;
                 [self.tableView reloadData];
+                [self.refreshControl endRefreshing];
             }
         });
     });
-}
-
-- (void)reportFetchError:(NSError *)error {
-    NSLog(@"Fetch Error Reported."); // TODO :)
 }
 
 #pragma mark - Display and interaction
