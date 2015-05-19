@@ -18,6 +18,7 @@
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
 		C9DBEB1A1B083839000EF690 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB191B083839000EF690 /* Tools.m */; };
 		C9DBEB201B085296000EF690 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB1F1B085296000EF690 /* Menu.m */; };
+		C9EC064C1B0BA7F800709830 /* DiningLocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EC064B1B0BA7F800709830 /* DiningLocationFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		C9DBEB191B083839000EF690 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		C9DBEB1E1B085296000EF690 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		C9DBEB1F1B085296000EF690 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		C9EC064A1B0BA7F800709830 /* DiningLocationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningLocationFormatter.h; sourceTree = "<group>"; };
+		C9EC064B1B0BA7F800709830 /* DiningLocationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningLocationFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */,
 				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
 				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
+				C9EC064A1B0BA7F800709830 /* DiningLocationFormatter.h */,
+				C9EC064B1B0BA7F800709830 /* DiningLocationFormatter.m */,
 				C9B374D51B059BEF00BFD4B6 /* LocationTableController.h */,
 				C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */,
 				C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */,
@@ -242,6 +247,7 @@
 			files = (
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
 				C9DBEB201B085296000EF690 /* Menu.m in Sources */,
+				C9EC064C1B0BA7F800709830 /* DiningLocationFormatter.m in Sources */,
 				C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
