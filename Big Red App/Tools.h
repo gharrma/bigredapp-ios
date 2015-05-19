@@ -5,14 +5,11 @@
 #define APPLICATION_THREAD (dispatch_get_main_queue())
 
 // Useful error identifiers
-#define JSON_ERROR (@"JSON Error")
-#define NETWORK_ERROR (@"Network Error")
+#define JSON_ERROR (@"Malformed JSON object")
+#define NO_MENU_FOUND (@"No menu found")
+#define NETWORK_ERROR (@"Network error")
 
-@class UIColor;
-
-
-@interface Tools : NSObject
-
-+ (UIColor *)getCornellRed;
-
+@import UIKit;
+@interface UIColor (ExtraColors)
++ (UIColor *)cornellRedColor;
 @end

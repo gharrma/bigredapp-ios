@@ -15,11 +15,14 @@ Yes, this is the iOS version of [Genki Marshall's](https://github.com/genkimarsh
 * [Pull requests](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) are very welcome! Do not hesitate if you are a beginner, as I would be more than happy to give an overview of the project, or even iOS development in general.
 
 ## General App Structure
-* All requests for JSON objects from the RedAPI are handled in the JSONRequest class.
-* The LocationTableController class controls the table that displays of list of dining locations.
-* The MenuViewController class controls the view that displays the menu for a particular location.
-* The UI structure/layout is housed in Main.storyboard, a standard nib file.
+* All source files are in the "Big Red App" directory.
+* JSONRequests handles all requests for JSON objects from the RedAPI, and it helps parse these objects in order to display menus.
+* LocationTableController controls the table that displays a list of dining locations.
+* MenuViewController controls the view that displays the menu for a particular location.
+* Menu defines classes to help represent menus and menu items.
+* Tools defines a few constants shared between classes.
+* The UI structure/layout is housed in Main.storyboard, a standard nib file (in the Base.lproj directory).
 
 ## Other
-* [Facebook Group](https://www.facebook.com/groups/opensourcecornell)
+* [Facebook Group for OpenSourceCornell](https://www.facebook.com/groups/opensourcecornell)
 * Questions? Feel free to email me (Matthew Gharrity): mjg355

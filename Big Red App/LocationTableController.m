@@ -23,12 +23,11 @@
     [super viewDidLoad];
     
     // Initialize pull-to-refresh
-    self.refreshControl = [UIRefreshControl new];
-    self.refreshControl.tintColor = [Tools getCornellRed];
-    [self.refreshControl addTarget:self action:@selector(getDiningLocations) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.tintColor = [UIColor cornellRedColor];
+    [self.refreshControl addTarget:self action:@selector(requestDiningLocations) forControlEvents:UIControlEventValueChanged];
     [self.refreshControl beginRefreshing];
     
-    [self getDiningLocations];
+    [self requestDiningLocations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +39,7 @@
 
 /** Get dining locations on a background thread, and reload view when finished. */
 // TODO: Set a timout for requests
-- (void)getDiningLocations {
+- (void)requestDiningLocations {
     dispatch_async(BACKGROUND_THREAD, ^{
         NSError *error = nil;
         NSArray *locations = [JSONRequests fetchDiningHallLocations:&error];
@@ -48,17 +47,15 @@
         dispatch_async(APPLICATION_THREAD, ^{
             
             // Report error if applicable
-            if (error) {
-                NSLog(@"Fetch Error Reported: %@", [error localizedDescription]); // TODO :)
-                [self.refreshControl endRefreshing];
-            }
+            if (error) NSLog(@"Fetch Error Reported: %@", [error localizedDescription]); // TODO :)
             
             // Update view if no error
             else {
                 diningLocations = locations;
                 [self.tableView reloadData];
-                [self.refreshControl endRefreshing];
             }
+            
+            [self.refreshControl endRefreshing];
         });
     });
 }
@@ -74,7 +71,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Cells comes from the nib file.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
     NSString *cellText = [self formatName:[diningLocations objectAtIndex:(int)indexPath.row]];
     cell.textLabel.text = cellText;
     
@@ -87,17 +84,17 @@
     // Keep certain names shorter, add in apostrophes, etc.
     // TODO: Choose better nicknames eventually
     NSDictionary *nicknames =
-  @{@"104west":                            @"104west!",
-    @"amit_bhatia_libe_cafe":              @"amit_bhatia's_libe_cafe",
-    @"bears_den":                          @"bear's_den",
-    @"carols_cafe":                        @"carol's_café",
-    @"goldies":                            @"goldie's",
-    @"jansens_dining_room_bethe_house":    @"bethe_house_dining_room",
-    @"jansens_market":                     @"jansen's_market",
-    @"marthas_cafe":                       @"martha's_cafe",
-    @"north_star":                         @"north_star_dining_room",
-    @"robert_purcell_marketplace_eatery":  @"robert_purcell_dining_room",
-    @"rustys":                             @"rusty's"};
+      @{@"104west":                            @"104west!",
+        @"amit_bhatia_libe_cafe":              @"amit_bhatia's_libe_cafe",
+        @"bears_den":                          @"bear's_den",
+        @"carols_cafe":                        @"carol's_café",
+        @"goldies":                            @"goldie's",
+        @"jansens_dining_room_bethe_house":    @"bethe_house_dining_room",
+        @"jansens_market":                     @"jansen's_market",
+        @"marthas_cafe":                       @"martha's_cafe",
+        @"north_star":                         @"north_star_dining_room",
+        @"robert_purcell_marketplace_eatery":  @"robert_purcell_dining_room",
+        @"rustys":                             @"rusty's"};
     NSString *nickname = [nicknames objectForKey:name];
     if (nickname) name = nickname;
     
@@ -110,7 +107,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        // Give menu view the name of the dining location selected
+        // Give menu view the name of the dining location selected, which automatically requests its menu
         [[segue destinationViewController] setDiningLocation:[diningLocations objectAtIndex:(int)indexPath.row]];
     }
 }

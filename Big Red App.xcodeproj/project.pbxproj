@@ -17,6 +17,7 @@
 		C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Tests.m */; };
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
 		C9DBEB1A1B083839000EF690 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB191B083839000EF690 /* Tools.m */; };
+		C9DBEB201B085296000EF690 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB1F1B085296000EF690 /* Menu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRequests.m; sourceTree = "<group>"; };
 		C9DBEB181B083839000EF690 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		C9DBEB191B083839000EF690 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		C9DBEB1E1B085296000EF690 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		C9DBEB1F1B085296000EF690 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */,
 				C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */,
 				C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */,
+				C9DBEB1E1B085296000EF690 /* Menu.h */,
+				C9DBEB1F1B085296000EF690 /* Menu.m */,
 				C9DBEB181B083839000EF690 /* Tools.h */,
 				C9DBEB191B083839000EF690 /* Tools.m */,
 				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
@@ -236,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
+				C9DBEB201B085296000EF690 /* Menu.m in Sources */,
 				C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,

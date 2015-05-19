@@ -2,5 +2,4 @@
 
 
 @interface LocationTableController : UITableViewController
-
 @end
