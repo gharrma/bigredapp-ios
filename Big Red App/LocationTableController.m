@@ -23,7 +23,6 @@
     [super viewDidLoad];
     
     // Initialize pull-to-refresh
-    self.refreshControl.tintColor = [UIColor cornellRedColor];
     [self.refreshControl addTarget:self action:@selector(requestDiningLocations) forControlEvents:UIControlEventValueChanged];
     [self.refreshControl beginRefreshing];
     
@@ -53,6 +52,9 @@
             else {
                 diningLocations = locations;
                 [self.tableView reloadData];
+                
+                // Show latest update time
+                self.refreshControl.attributedTitle = [NSDate getLatestUpdateString];
             }
             
             [self.refreshControl endRefreshing];
@@ -71,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Cells comes from the nib file.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location Cell" forIndexPath:indexPath];
     NSString *cellText = [self formatName:[diningLocations objectAtIndex:(int)indexPath.row]];
     cell.textLabel.text = cellText;
     

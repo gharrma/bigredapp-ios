@@ -13,3 +13,7 @@
 @interface UIColor (ExtraColors)
 + (UIColor *)cornellRedColor;
 @end
+
+@interface NSDate (ExtraDateFormats)
++ (NSAttributedString *)getLatestUpdateString;
+@end

@@ -19,7 +19,7 @@
     refreshControl = [UIRefreshControl new];
     refreshControl.tintColor = [UIColor cornellRedColor];
     [refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
-    [self.textView addSubview:refreshControl];
+    [self.textView addSubview:refreshControl]; // TODO: Place refresh view BELOW text view
     [refreshControl beginRefreshing];
 }
 
@@ -49,7 +49,12 @@
             }
             
             // Update text
-            else self.textView.text = menuText;
+            else {
+                self.textView.text = menuText;
+                
+                // Show latest update time
+                refreshControl.attributedTitle = [NSDate getLatestUpdateString];
+            }
             
             [refreshControl endRefreshing];
         });

@@ -77,7 +77,7 @@ static int const TIMEOUT_LENGTH = 10;
 }
 
 /** Return a collection object representing the JSON object found at the given path appended to base URL.
-    This should be called on a background thread! Precondition: error is initially null. */
+    This should be called while on a background thread! Precondition: error is initially null. */
 + (id)fetchJsonObjectAtPath:(NSString *)path error:(NSError **)error {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[BASE_URL stringByAppendingString:path]]
                                              cachePolicy:0
