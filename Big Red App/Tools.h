@@ -12,6 +12,7 @@
 @import UIKit;
 @interface UIColor (ExtraColors)
 + (UIColor *)cornellRedColor;
++ (UIColor *)cornellTanColor;
 @end
 
 @interface NSDate (ExtraDateFormats)

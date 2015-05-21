@@ -1,7 +1,7 @@
 #import "LocationTableController.h"
 #import "MenuViewController.h"
 #import "JSONRequests.h"
-#import "DiningLocationFormatter.h"
+#import "LocationFormatter.h"
 #import "Tools.h"
 @import UIKit;
 
@@ -25,8 +25,9 @@
     
     // Initialize pull-to-refresh
     [self.refreshControl addTarget:self action:@selector(requestDiningLocations) forControlEvents:UIControlEventValueChanged];
-    [self.refreshControl beginRefreshing];
     
+    // Get dining locations
+    [self.refreshControl beginRefreshing];
     [self requestDiningLocations];
 }
 
@@ -38,7 +39,6 @@
 # pragma mark - Data updates
 
 /** Get dining locations on a background thread, and reload view when finished. */
-// TODO: Set a timout for requests
 - (void)requestDiningLocations {
     dispatch_async(BACKGROUND_THREAD, ^{
         NSError *error = nil;
@@ -47,11 +47,11 @@
         // Put each location identifier in the correct section (diningRooms vs. cafes)
         NSMutableArray *updatedDiningRooms = [NSMutableArray new], *updatedCafes = [NSMutableArray new];
         for (NSString *location in locations) {
-            NSMutableArray *correctSection = [DiningLocationFormatter isDiningRoom:location] ? updatedDiningRooms : updatedCafes;
+            NSMutableArray *correctSection = [LocationFormatter isDiningRoom:location] ? updatedDiningRooms : updatedCafes;
             [correctSection addObject:location];
         }
         
-        // Sort locations alphabetically within each section
+        // Sort locations alphabetically within each section. TODO: Unfortunately, this does not sort by nickname
         NSArray *sortedDining, *sortedCafes;
         sortedDining = [updatedDiningRooms sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
         sortedCafes = [updatedCafes sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -90,7 +90,7 @@
     // Cells comes from the nib file.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location Cell" forIndexPath:indexPath];
     NSString *unformattedText = [(indexPath.section == 0 ? diningRooms : cafes) objectAtIndex:(int)indexPath.row];
-    NSString *formattedText = [DiningLocationFormatter getFormattedName:unformattedText];
+    NSString *formattedText = [LocationFormatter formatLocationName:unformattedText];
     cell.textLabel.text = formattedText;
     
     return cell;
@@ -101,11 +101,18 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         // Give menu view the name of the dining location selected, which automatically requests its menu
-        [[segue destinationViewController] setDiningLocation:[diningRooms objectAtIndex:(int)indexPath.row]];
+        [[segue destinationViewController] showMenuForLocation:[diningRooms objectAtIndex:(int)indexPath.row]];
     }
 }
 
 #pragma mark - Settings
+
+// Section header colors
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.tintColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    [header.textLabel setTextColor:[UIColor lightTextColor]];
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return section == 0 ? @"Dining Rooms" : @"Cafés and Cafeterias";

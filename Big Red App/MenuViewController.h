@@ -3,7 +3,7 @@
 
 @interface MenuViewController : UIViewController
 
-- (void)setDiningLocation:(NSString *)location;
+- (void)showMenuForLocation:(NSString *)location;
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 

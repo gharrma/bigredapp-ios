@@ -2,6 +2,7 @@
 #import "JSONRequests.h"
 #import "Menu.h"
 #import "Tools.h"
+#import "LocationFormatter.h"
 
 @interface MenuViewController () {
     NSString *diningLocation;
@@ -20,12 +21,13 @@
     refreshControl.tintColor = [UIColor cornellRedColor];
     [refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
     [self.textView addSubview:refreshControl]; // TODO: Place refresh view BELOW text view
-    [refreshControl beginRefreshing];
 }
 
 /** Select a new dining location, and request its menu. */
-- (void)setDiningLocation:(NSString *)location {
+- (void)showMenuForLocation:(NSString *)location {
     diningLocation = location;
+    self.navigationItem.title = [LocationFormatter formatLocationName:location];
+    [refreshControl beginRefreshing];
     [self requestMenu];
 }
 

@@ -1,9 +1,9 @@
-#import "DiningLocationFormatter.h"
+#import "LocationFormatter.h"
 
-@implementation DiningLocationFormatter
+@implementation LocationFormatter
 
 /** Remove underscores in a dining location name, capitalize first letters, and map to nicknames if applicable. */
-+ (NSString *)getFormattedName:(NSString *)name {
++ (NSString *)formatLocationName:(NSString *)name {
     
     NSDictionary *const nicknames =
     @{@"becker_house_dining_room":          @"Becker",
