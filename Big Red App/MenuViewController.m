@@ -6,7 +6,12 @@
 
 @interface MenuViewController () {
     NSString *diningLocation;
-    UIRefreshControl *refreshControl;
+    
+    /** List of meals offered at the selected location. */
+    NSArray *meals;
+
+    /** Dictionary of menus keyed with meal names. */
+    NSDictionary *menus;
 }
 @end
 
@@ -16,18 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    meals = @[@"Breakfast", @"Lunch", @"Dinner"]; // TODO: Brunch?
+    
     // Initialize pull-to-refresh
-    refreshControl = [UIRefreshControl new];
-    refreshControl.tintColor = [UIColor cornellRedColor];
-    [refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
-    [self.textView addSubview:refreshControl]; // TODO: Place refresh view BELOW text view
+    self.refreshControl.tintColor = [UIColor cornellRedColor];
+    [self.refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
 }
 
 /** Select a new dining location, and request its menu. */
 - (void)showMenuForLocation:(NSString *)location {
     diningLocation = location;
-    self.navigationItem.title = [LocationFormatter formatLocationName:location];
-    [refreshControl beginRefreshing];
+    [self.refreshControl beginRefreshing];
     [self requestMenu];
 }
 
@@ -37,51 +41,63 @@
         
         // Fetch menu from API
         NSError *error = nil;
-        NSDictionary *meals = [JSONRequests fetchMealsForLocation:diningLocation error:&error];
+        menus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
         
-        // Fill text view with menu items
-        NSString *menuText = meals ? [self stringFromMeals:meals] : nil;
-        
+        // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
-
-            // Report error if applicable
-            if (error) {
-                NSLog(@"Error: %@", [error localizedDescription]); // TODO :)
-                self.textView.text = [error localizedDescription];
-            }
-            
-            // Update text
+            if (error) NSLog(@"Error: %@", [error localizedDescription]); // TODO :)
             else {
-                self.textView.text = menuText;
-                
-                // Show latest update time
-                refreshControl.attributedTitle = [NSDate getLatestUpdateString];
+                [self.tableView reloadData];
+                self.refreshControl.attributedTitle = [NSDate getLatestUpdateString];
             }
             
-            [refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     });
-}
-
-/** Return a string from a dictionary of meals, listing one menu item per line. */
-- (NSString *)stringFromMeals:(NSDictionary *)meals {
-    NSMutableString *menuText = [NSMutableString new];
-    for (Menu *meal in meals.allValues) {
-        if (meal.closed) [menuText appendString:@"Closed\n"];
-        else for (NSArray *group in meal.itemGroups.allValues) {
-            for (NSString *item in group) {
-                [menuText appendString:[NSString stringWithFormat:@"%@\n", item]];
-            }
-        }
-        [menuText appendString:@"\n"];
-    }
-    
-    return menuText;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Display and interaction
+
+// Return a particular cell to display.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Menu *menu = [menus objectForKey:[meals objectAtIndex:indexPath.section]];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:(menu.closed ? @"ClosedCell" : @"MenuItemCell")
+                                                            forIndexPath:indexPath];
+    cell.textLabel.text = menu.closed ? @"Closed" : [menu menuItemForIndex:indexPath.row].name;
+    
+    return cell;
+}
+
+// Provide number of cells
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    Menu *menu = [menus objectForKey:[meals objectAtIndex:section]];
+    return menu.closed ? 1 : [menu menuItemCount];
+}
+
+// Provide number of sections
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return meals ? [meals count] : 0;
+}
+
+// Provide section titles
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [meals objectAtIndex:section];
+}
+
+// Adjust section header colors
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.tintColor = [UIColor whiteColor];
+    [header.textLabel setTextColor:[UIColor cornellRedColor]];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
 }
 
 @end

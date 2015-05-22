@@ -56,12 +56,9 @@
         sortedDining = [updatedDiningRooms sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
         sortedCafes = [updatedCafes sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
         
+        // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
-            
-            // Report error if applicable
             if (error) NSLog(@"Fetch Error Reported: %@", [error localizedDescription]); // TODO :)
-            
-            // Update view if no error
             else {
                 diningRooms = sortedDining;
                 cafes = sortedCafes;
@@ -78,12 +75,6 @@
 
 #pragma mark - Display and interaction
 
-// Necessary to tell view how many cells to display
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *locationType = section == 0 ? diningRooms : cafes;
-    return locationType ? [locationType count] : 0;
-}
-
 // Return a particular cell to display.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -98,28 +89,34 @@
 
 // Prepare to transfer control to a menu view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"ShowMenu"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         // Give menu view the name of the dining location selected, which automatically requests its menu
         [[segue destinationViewController] showMenuForLocation:[diningRooms objectAtIndex:(int)indexPath.row]];
     }
 }
 
-#pragma mark - Settings
-
-// Section header colors
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.tintColor = [UIColor colorWithWhite:0.7 alpha:1.0];
-    [header.textLabel setTextColor:[UIColor lightTextColor]];
+// Provide number of cells
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray *locationType = section == 0 ? diningRooms : cafes;
+    return locationType ? [locationType count] : 0;
 }
 
+// Provide number of sections
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+// Provide section titles
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return section == 0 ? @"Dining Rooms" : @"Cafés and Cafeterias";
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+// Adjust section header colors
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.tintColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    [header.textLabel setTextColor:[UIColor lightTextColor]];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

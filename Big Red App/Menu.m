@@ -1,18 +1,47 @@
 #import "Menu.h"
 
 
-/** Keeps a list of menu items for a particular meal.
-    Menu items (represented as strings) are kept in arrays representing food categories. 
-    These arrays are held in the itemGroups ivar, accessed by the group name (e.g. "Soup Station"). */
+@implementation MenuItem
+
+- (id)initWithName:(NSString *)name category:(NSString *)category {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _category = category;
+    }
+    return self;
+}
+
+@end
+
+
+@interface Menu () {
+    NSMutableArray *menuItems;
+}
+@end
+
 @implementation Menu
 
 - (id)init {
     self = [super init];
     if (self) {
-        self.closed = false;
-        self.itemGroups = [NSMutableDictionary new];
+        _closed = false;
+        menuItems = [NSMutableArray new];
     }
     return self;
 }
+
+- (void)addMenuItem:(MenuItem *)menuItem {
+    [menuItems addObject:menuItem];
+}
+
+- (MenuItem *)menuItemForIndex:(int)index {
+    return [menuItems objectAtIndex:index];
+}
+
+- (int)menuItemCount {
+    return [menuItems count];
+}
+
 
 @end
