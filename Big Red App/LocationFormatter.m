@@ -2,7 +2,6 @@
 
 @implementation LocationFormatter
 
-/** Remove underscores in a dining location name, capitalize first letters, and map to nicknames if applicable. */
 + (NSString *)formatLocationName:(NSString *)name {
     
     NSDictionary *const nicknames =
@@ -36,7 +35,6 @@
                         capitalizedString];
 }
 
-/** Returns true iff the given dining location is a dining room (as opposed to a café, etc.) */
 + (BOOL)isDiningRoom:(NSString *)name {
     NSSet *const diningRooms = [[NSSet alloc] initWithArray:
   @[@"becker_house_dining_room",

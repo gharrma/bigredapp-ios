@@ -28,7 +28,6 @@
     [self.refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
 }
 
-/** Select a new dining location, and request its menu. */
 - (void)showMenuForLocation:(NSString *)location {
     diningLocation = location;
     [self.refreshControl beginRefreshing];
