@@ -40,7 +40,7 @@
 }
 
 - (int)menuItemCount {
-    return [menuItems count];
+    return (int)[menuItems count];
 }
 
 

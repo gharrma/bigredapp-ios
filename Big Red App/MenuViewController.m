@@ -4,6 +4,10 @@
 #import "Tools.h"
 #import "LocationFormatter.h"
 
+#define MENU_ITEM_CELL_HEIGHT 20
+#define CLOSED_CELL_HEIGHT 32
+
+
 @interface MenuViewController () {
     NSString *diningLocation;
     
@@ -26,6 +30,7 @@
     // Initialize pull-to-refresh
     self.refreshControl.tintColor = [UIColor cornellRedColor];
     [self.refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.attributedTitle = nil;
 }
 
 - (void)showMenuForLocation:(NSString *)location {
@@ -62,33 +67,39 @@
 
 #pragma mark - Display and interaction
 
-// Return a particular cell to display.
+// Provide a particular cell to display.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Menu *menu = [menus objectForKey:[meals objectAtIndex:indexPath.section]];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:(menu.closed ? @"ClosedCell" : @"MenuItemCell")
-                                                            forIndexPath:indexPath];
-    cell.textLabel.text = menu.closed ? @"Closed" : [menu menuItemForIndex:indexPath.row].name;
+    NSString *cellType = menu.closed ? @"ClosedCell" : @"MenuItemCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellType forIndexPath:indexPath];
+    cell.textLabel.text = menu.closed ? @"Closed" : [menu menuItemForIndex:(int)indexPath.row].name;
     
     return cell;
 }
 
-// Provide number of cells
+// Provide the height of a particular cell.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Menu *menu = [menus objectForKey:[meals objectAtIndex:indexPath.section]];
+    return menu.closed ? CLOSED_CELL_HEIGHT : MENU_ITEM_CELL_HEIGHT;
+}
+
+// Provide number of cells.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     Menu *menu = [menus objectForKey:[meals objectAtIndex:section]];
     return menu.closed ? 1 : [menu menuItemCount];
 }
 
-// Provide number of sections
+// Provide number of sections.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return meals ? [meals count] : 0;
+    return menus ? [meals count] : 0;
 }
 
-// Provide section titles
+// Provide section titles.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [meals objectAtIndex:section];
 }
 
-// Adjust section header colors
+// Adjust section header colors.
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.tintColor = [UIColor whiteColor];

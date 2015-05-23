@@ -10,7 +10,7 @@
 @end
 
 
-/** Contains the items on the menu for a single meal. */
+/** Contains the items on a menu for a single meal. */
 @interface Menu : NSObject
 @property bool closed;
 

@@ -6,7 +6,6 @@ static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/dining";
 static int const TIMEOUT_INTERVAL = 10;
 
 
-/** Provides methods for getting data from the RedAPI. */
 @implementation JSONRequests
 
 /** Return a collection object representing the JSON object found at the given path appended to base URL.

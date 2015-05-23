@@ -91,8 +91,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowMenu"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        // Give menu view the name of the dining location selected, which automatically requests its menu
-        [[segue destinationViewController] showMenuForLocation:[diningRooms objectAtIndex:(int)indexPath.row]];
+        NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
+        [[segue destinationViewController] showMenuForLocation:[locationType objectAtIndex:(int)indexPath.row]];
     }
 }
 
@@ -104,7 +104,7 @@
 
 // Provide number of sections
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return (diningRooms && cafes) ? 2 : 0;
 }
 
 // Provide section titles
@@ -116,7 +116,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.tintColor = [UIColor colorWithWhite:0.7 alpha:1.0];
-    [header.textLabel setTextColor:[UIColor lightTextColor]];
+    [header.textLabel setTextColor:[UIColor whiteColor]];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

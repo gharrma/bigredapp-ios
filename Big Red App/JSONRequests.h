@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 @class Meals;
 
+
+/** Provides methods for getting and encapsulating data from the RedAPI. */
 @interface JSONRequests : NSObject
 
 /** Returns an array of strings corresponding to dining locations. */
