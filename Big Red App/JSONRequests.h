@@ -2,7 +2,8 @@
 @class Meals;
 
 
-/** Provides methods for getting and encapsulating data from the RedAPI. */
+/** Provides methods for getting and encapsulating data from the RedAPI. 
+    All fetch requests should be made on a background thread. */
 @interface JSONRequests : NSObject
 
 /** Returns an array of strings corresponding to dining locations. */

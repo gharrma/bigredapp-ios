@@ -21,6 +21,8 @@
 
 @implementation MenuViewController
 
+#pragma mark - Initialization
+
 // Initial setup after loading the view.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +40,8 @@
     [self.refreshControl beginRefreshing];
     [self requestMenu];
 }
+
+#pragma mark - Data updates
 
 /** Fetch the menu on a background thread, and update view when done. */
 - (void)requestMenu {
