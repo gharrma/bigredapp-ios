@@ -3,6 +3,7 @@
 #import "JSONRequests.h"
 #import "LocationFormatter.h"
 #import "Tools.h"
+#import "ErrorHandling.h"
 @import UIKit;
 
 
@@ -58,7 +59,7 @@
         
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
-            if (error) NSLog(@"Fetch Error Reported: %@", [error localizedDescription]); // TODO :)
+            if (error) [ErrorHandling displayAlertForError:error fromViewController:self];
             else {
                 diningRooms = sortedDining;
                 cafes = sortedCafes;
@@ -94,6 +95,12 @@
         NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
         [[segue destinationViewController] showMenuForLocation:[locationType objectAtIndex:(int)indexPath.row]];
     }
+}
+
+// Deselect selected cell when returning to this view
+- (void)viewWillAppear:(BOOL)animated {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    if (indexPath) [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
 }
 
 // Provide number of cells

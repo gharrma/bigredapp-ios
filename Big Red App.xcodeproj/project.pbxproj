@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C96868B81B12B80000BA2ED2 /* ErrorHandling.m */; };
 		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
 		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
 		C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C96868B71B12B80000BA2ED2 /* ErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandling.h; sourceTree = "<group>"; };
+		C96868B81B12B80000BA2ED2 /* ErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandling.m; sourceTree = "<group>"; };
 		C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Red App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374CF1B059BEF00BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */,
 				C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */,
+				C96868B71B12B80000BA2ED2 /* ErrorHandling.h */,
+				C96868B81B12B80000BA2ED2 /* ErrorHandling.m */,
 				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
 				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
 				C9EC064A1B0BA7F800709830 /* LocationFormatter.h */,
@@ -253,6 +258,7 @@
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
+				C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */,
 				C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

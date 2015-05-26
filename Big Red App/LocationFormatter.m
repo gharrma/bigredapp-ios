@@ -5,25 +5,25 @@
 + (NSString *)formatLocationName:(NSString *)name {
     
     NSDictionary *const nicknames =
-    @{@"becker_house_dining_room":          @"Becker",
-      @"cook_house_dining_room":            @"Cook",
-      @"jansens_dining_room_bethe_house":   @"Bethe",
-      @"keeton_house_dining_room":          @"Keeton",
-      @"north_star":                        @"North Star (Appel)",
-      @"okenshields":                       @"Okenshields",
-      @"risley_dining":                     @"Risley",
-      @"robert_purcell_marketplace_eatery": @"RPCC",
-      @"rose_house_dining_room":            @"Rose",
-      @"104west":                           @"104West!",
+  @{@"becker_house_dining_room":          @"Becker",
+    @"cook_house_dining_room":            @"Cook",
+    @"jansens_dining_room_bethe_house":   @"Bethe",
+    @"keeton_house_dining_room":          @"Keeton",
+    @"north_star":                        @"North Star (Appel)",
+    @"okenshields":                       @"Okenshields",
+    @"risley_dining":                     @"Risley",
+    @"robert_purcell_marketplace_eatery": @"RPCC",
+    @"rose_house_dining_room":            @"Rose",
+    @"104west":                           @"104West!",
 
-      @"amit_bhatia_libe_cafe":             @"Amit Bhatia's Libe Café",
-      @"bears_den":                         @"Bear's Den",
-      @"carols_cafe":                       @"Carol's Café",
-      @"goldies":                           @"Goldie's",
-      @"jansens_market":                    @"Jansen's Market",
-      @"marthas_cafe":                      @"Martha's Café",
-      @"rustys":                            @"Rusty's",
-      @"cornell_dairy_bar":                 @"Dairy Bar"};
+    @"amit_bhatia_libe_cafe":             @"Amit Bhatia's Libe Café",
+    @"bears_den":                         @"Bear's Den",
+    @"carols_cafe":                       @"Carol's Café",
+    @"goldies":                           @"Goldie's",
+    @"jansens_market":                    @"Jansen's Market",
+    @"marthas_cafe":                      @"Martha's Café",
+    @"rustys":                            @"Rusty's",
+    @"cornell_dairy_bar":                 @"Dairy Bar"};
     
     // Return nickname if applicable
     NSString *nickname = [nicknames objectForKey:name];

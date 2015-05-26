@@ -1,8 +1,9 @@
 #import "JSONRequests.h"
 #import "Tools.h"
 #import "Menu.h"
+#import "ErrorHandling.h"
 
-static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/dining";
+static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/";
 static int const TIMEOUT_INTERVAL = 10;
 
 
@@ -20,15 +21,19 @@ static int const TIMEOUT_INTERVAL = 10;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
     if (*error) return nil; // JSON error
     
+#ifdef DEBUG
+    NSLog(@"JSON object fetched:\n%@\n", jsonObject);
+#endif
+    
     return jsonObject;
 }
 
 + (NSArray *)fetchDiningHallLocations:(NSError **)error {
-    NSArray *locations = [self fetchJsonObjectAtPath:@"" error:error];
+    NSArray *locations = [self fetchJsonObjectAtPath:@"dining" error:error];
     if (*error) return nil;
     
     if (![locations isKindOfClass:[NSArray class]] || [locations count] == 0) {
-        *error = [NSError errorWithDomain:JSON_ERROR code:0 userInfo:nil];
+        *error = [NSError jsonError];
         return nil;
     }
     
@@ -36,13 +41,13 @@ static int const TIMEOUT_INTERVAL = 10;
 }
 
 + (NSDictionary *)fetchMenusForLocation:(NSString *)location error:(NSError **)error {
-    NSString *path = [NSString stringWithFormat:@"/menu/%@/Breakfast,Lunch,Dinner/LOCATIONS", location];
+    NSString *path = [NSString stringWithFormat:@"dining/menu/%@/Breakfast,Lunch,Dinner/LOCATIONS", location];
     NSDictionary *baseObject = [self fetchJsonObjectAtPath:path error:error];
     if (*error) return nil;
     
     NSDictionary *locationData = [baseObject objectForKey:location];
     if (!locationData) {
-        *error = [NSError errorWithDomain:JSON_ERROR code:1 userInfo:nil];
+        *error = [NSError jsonError];
         return nil;
     }
     
@@ -58,18 +63,19 @@ static int const TIMEOUT_INTERVAL = 10;
 
 /** Create a meal object from a json-sourced array of menu items. */
 + (Menu *)buildMenuFromJSONArray:(NSArray *)items error:(NSError **)error {
+    Menu *menu = [Menu new];
+    
+    // If no menu found, assume closed for the current meal
     if (!items || [items isKindOfClass:[NSNull class]]) {
-        // No menu found
-        *error = [NSError errorWithDomain:NO_MENU_FOUND code:0 userInfo:nil];
-        return nil;
+        menu.closed = true;
+        return menu;
     }
     
-    Menu *menu = [Menu new];
     for (NSDictionary *item in items) {
         NSString *category = [item objectForKey:@"category"];
         NSString *name = [item objectForKey:@"name"];
         
-        if (!category) category = @"No Category";
+        if (!category) category = @"[Uncategorized]";
         if (!name) continue;
         if ([name isEqualToString:@"Closed"]) {
             menu.closed = true;

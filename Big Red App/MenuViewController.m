@@ -3,6 +3,7 @@
 #import "Menu.h"
 #import "Tools.h"
 #import "LocationFormatter.h"
+#import "ErrorHandling.h"
 
 #define MENU_ITEM_CELL_HEIGHT 20
 #define CLOSED_CELL_HEIGHT 32
@@ -49,11 +50,13 @@
         
         // Fetch menu from API
         NSError *error = nil;
-        menus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
+        // TODO: Display description of café rather than an error
+        if (![LocationFormatter isDiningRoom:diningLocation]) error = [NSError noMenuFound];
+        else menus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
         
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
-            if (error) NSLog(@"Error: %@", [error localizedDescription]); // TODO :)
+            if (error) [ErrorHandling displayAlertForError:error fromViewController:self];
             else {
                 [self.tableView reloadData];
                 self.refreshControl.attributedTitle = [NSDate getLatestUpdateString];
