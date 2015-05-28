@@ -85,6 +85,9 @@
     NSString *formattedText = [LocationFormatter formatLocationName:unformattedText];
     cell.textLabel.text = formattedText;
     
+    cell.detailTextLabel.text = @"Placeholder detail";
+    cell.detailTextLabel.textColor = [UIColor cornellRedColor];
+    
     return cell;
 }
 
