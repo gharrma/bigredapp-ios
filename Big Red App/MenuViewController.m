@@ -49,15 +49,17 @@
     dispatch_async(BACKGROUND_THREAD, ^{
         
         // Fetch menu from API
+        NSDictionary *updatedMenus = nil;
         NSError *error = nil;
         // TODO: Display description of café rather than an error
         if (![LocationFormatter isDiningRoom:diningLocation]) error = [NSError noMenuFound];
-        else menus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
+        else updatedMenus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
         
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
             if (error) [ErrorHandling displayAlertForError:error fromViewController:self];
             else {
+                menus = updatedMenus;
                 [self.tableView reloadData];
                 self.refreshControl.attributedTitle = [NSDate getLatestUpdateString];
             }
