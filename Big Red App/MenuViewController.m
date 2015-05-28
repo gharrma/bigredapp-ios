@@ -7,10 +7,13 @@
 
 #define MENU_ITEM_CELL_HEIGHT 20
 #define CLOSED_CELL_HEIGHT 32
+#define LOCATION_CELL_HEIGHT 40
+#define LOCATION_HEADER_HEIGHT 15
+#define MEAL_HEADER_HEIGHT 35
 
 
 @interface MenuViewController () {
-    NSString *diningLocation;
+    NSString *locationID, *locationName;
     
     /** List of meals offered at the selected location. */
     NSArray *meals;
@@ -37,7 +40,8 @@
 }
 
 - (void)showMenuForLocation:(NSString *)location {
-    diningLocation = location;
+    locationID = location;
+    locationName = [LocationFormatter formatLocationName:locationID];
     [self.refreshControl beginRefreshing];
     [self requestMenu];
 }
@@ -52,8 +56,8 @@
         NSDictionary *updatedMenus = nil;
         NSError *error = nil;
         // TODO: Display description of café rather than an error
-        if (![LocationFormatter isDiningRoom:diningLocation]) error = [NSError noMenuFound];
-        else updatedMenus = [JSONRequests fetchMenusForLocation:diningLocation error:&error];
+        if (![LocationFormatter isDiningRoom:locationID]) error = [NSError noMenuFound];
+        else updatedMenus = [JSONRequests fetchMenusForLocation:locationID error:&error];
         
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
@@ -78,34 +82,47 @@
 
 // Provide a particular cell to display.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Menu *menu = [menus objectForKey:[meals objectAtIndex:indexPath.section]];
-    NSString *cellType = menu.closed ? @"ClosedCell" : @"MenuItemCell";
+    NSString *cellType, *cellText, *detailText;
+    
+    if (indexPath.section == 0) {
+        cellType = @"LocationNameCell";
+        cellText = locationName;
+    } else {
+        Menu *menu = [menus objectForKey:[meals objectAtIndex:(indexPath.section - 1)]];
+        cellType = menu.closed ? @"ClosedCell" : @"MenuItemCell";
+        cellText = menu.closed ? @"Closed" : [menu menuItemForIndex:(int)indexPath.row].name;
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellType forIndexPath:indexPath];
-    cell.textLabel.text = menu.closed ? @"Closed" : [menu menuItemForIndex:(int)indexPath.row].name;
+    cell.textLabel.text = cellText;
+    cell.detailTextLabel.text = detailText;
     
     return cell;
 }
 
 // Provide the height of a particular cell.
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Menu *menu = [menus objectForKey:[meals objectAtIndex:indexPath.section]];
+    if (indexPath.section == 0) return LOCATION_CELL_HEIGHT;
+    Menu *menu = [menus objectForKey:[meals objectAtIndex:(indexPath.section - 1)]];
     return menu.closed ? CLOSED_CELL_HEIGHT : MENU_ITEM_CELL_HEIGHT;
 }
 
 // Provide number of cells.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    Menu *menu = [menus objectForKey:[meals objectAtIndex:section]];
+    if (section == 0) return 1;
+    Menu *menu = [menus objectForKey:[meals objectAtIndex:(section - 1)]];
     return menu.closed ? 1 : [menu menuItemCount];
 }
 
 // Provide number of sections.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return menus ? [meals count] : 0;
+    return (menus ? [meals count] : 0) + 1;
 }
 
 // Provide section titles.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [meals objectAtIndex:section];
+    if (section == 0) return nil;
+    return [meals objectAtIndex:(section - 1)];
 }
 
 // Adjust section header colors.
@@ -113,6 +130,11 @@
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.tintColor = [UIColor whiteColor];
     [header.textLabel setTextColor:[UIColor cornellRedColor]];
+}
+
+// Adjust section header heights.
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return section == 0 ? LOCATION_HEADER_HEIGHT : MEAL_HEADER_HEIGHT;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
