@@ -5,11 +5,11 @@
 #import "LocationFormatter.h"
 #import "ErrorHandling.h"
 
-#define MENU_ITEM_CELL_HEIGHT 20
-#define CLOSED_CELL_HEIGHT 32
-#define LOCATION_CELL_HEIGHT 40
-#define LOCATION_HEADER_HEIGHT 15
-#define MEAL_HEADER_HEIGHT 35
+#define MENU_ITEM_CELL_HEIGHT 20.0
+#define CLOSED_CELL_HEIGHT 32.0
+#define LOCATION_CELL_HEIGHT 40.0
+#define LOCATION_HEADER_HEIGHT 15.0
+#define MEAL_HEADER_HEIGHT 35.0
 
 
 @interface MenuViewController () {
