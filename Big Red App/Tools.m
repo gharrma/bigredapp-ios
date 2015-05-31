@@ -24,8 +24,7 @@
     if (!formatter) formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"MMM d, h:mm a"];
     NSString *latestUpdate = [NSString stringWithFormat:@"Updated %@", [formatter stringFromDate:[NSDate date]]];
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIColor cornellRedColor] forKey:NSForegroundColorAttributeName];
-    return [[NSAttributedString alloc] initWithString:latestUpdate attributes:attributes];
+    return [[NSAttributedString alloc] initWithString:latestUpdate];
 }
 
 @end

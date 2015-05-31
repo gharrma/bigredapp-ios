@@ -34,9 +34,8 @@
     meals = @[@"Breakfast", @"Lunch", @"Dinner"]; // TODO: Brunch?
     
     // Initialize pull-to-refresh
-    self.refreshControl.tintColor = [UIColor cornellRedColor];
     [self.refreshControl addTarget:self action:@selector(requestMenu) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.attributedTitle = nil;
+    [self.tableView setContentOffset:CGPointMake(0.0, -self.refreshControl.frame.size.height) animated:NO];
 }
 
 - (void)showMenuForLocation:(NSString *)location {
