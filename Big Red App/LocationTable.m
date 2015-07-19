@@ -1,18 +1,21 @@
-#import "LocationTableController.h"
-#import "MenuViewController.h"
+#import "LocationTable.h"
+#import "DiningView.h"
 #import "JSONRequests.h"
 #import "LocationFormatter.h"
 #import "Tools.h"
 #import "ErrorHandling.h"
 @import UIKit;
 
+#define DINING_CELL_HEIGHT 58.0
+#define CAFE_CELL_HEIGHT 48.0
 
-@interface LocationTableController () {
+
+@interface LocationTable () {
     NSArray *diningRooms, *cafes;
 }
 @end
 
-@implementation LocationTableController
+@implementation LocationTable
 
 # pragma mark - Initialization
 
@@ -23,17 +26,9 @@
 // Initial setup after loading the view.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.refreshControl addTarget:self action:@selector(requestDiningLocations) forControlEvents:UIControlEventValueChanged];
-    
-    // Get dining locations
     [self.refreshControl beginRefreshing];
     [self requestDiningLocations];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark - Data updates
@@ -42,7 +37,7 @@
 - (void)requestDiningLocations {
     dispatch_async(BACKGROUND_THREAD, ^{
         NSError *error = nil;
-        NSArray *locations = [JSONRequests fetchDiningHallLocations:&error];
+        NSArray *locations = [JSONRequests fetchDiningLocations:&error];
         
         // Put each location identifier in the correct section (diningRooms vs. cafes)
         NSMutableArray *updatedDiningRooms = [NSMutableArray new], *updatedCafes = [NSMutableArray new];
@@ -79,24 +74,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Cells comes from the nib file.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location Cell" forIndexPath:indexPath];
+    NSString *cellType = (indexPath.section == 0) ? @"DiningCell" : @"CafeCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellType forIndexPath:indexPath];
     NSString *unformattedText = [(indexPath.section == 0 ? diningRooms : cafes) objectAtIndex:(int)indexPath.row];
     NSString *formattedText = [LocationFormatter formatLocationName:unformattedText];
     cell.textLabel.text = formattedText;
-    
-    cell.detailTextLabel.text = @"Placeholder detail";
-    cell.detailTextLabel.textColor = [UIColor cornellRedColor];
+    cell.textLabel.textColor = [UIColor cornellGrayColor];
+    cell.detailTextLabel.textColor = [UIColor cornellGrayColor];
     
     return cell;
 }
 
 // Prepare to transfer control to a menu view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ShowMenu"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
-        [[segue destinationViewController] showMenuForLocation:[locationType objectAtIndex:(int)indexPath.row]];
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
+    NSString *location = [locationType objectAtIndex:(int)indexPath.row];
+    [[segue destinationViewController] showDetailForLocation:location];
 }
 
 // Deselect selected cell when returning to this view
@@ -109,6 +103,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *locationType = section == 0 ? diningRooms : cafes;
     return locationType ? [locationType count] : 0;
+}
+
+// Provide the height of a particular cell.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 0) ? DINING_CELL_HEIGHT : CAFE_CELL_HEIGHT;
 }
 
 // Provide number of sections

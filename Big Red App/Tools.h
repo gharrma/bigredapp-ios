@@ -8,6 +8,7 @@
 @interface UIColor (ExtraColors)
 + (UIColor *)cornellRedColor;
 + (UIColor *)cornellTanColor;
++ (UIColor *)cornellGrayColor;
 @end
 
 @interface NSDate (ExtraDateFormats)

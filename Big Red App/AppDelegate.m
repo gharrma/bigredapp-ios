@@ -1,8 +1,13 @@
 #import "AppDelegate.h"
-#import "MenuViewController.h"
+#import "DiningView.h"
+#import "JSONRequests.h"
 
 
 @implementation AppDelegate
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    [JSONRequests clearCache];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

@@ -10,8 +10,8 @@
 		C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C96868B81B12B80000BA2ED2 /* ErrorHandling.m */; };
 		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
 		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
-		C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */; };
-		C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */; };
+		C9B374D71B059BEF00BFD4B6 /* LocationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* LocationTable.m */; };
+		C9B374DA1B059BEF00BFD4B6 /* DiningView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D91B059BEF00BFD4B6 /* DiningView.m */; };
 		C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */; };
 		C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */; };
 		C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B374E01B059BEF00BFD4B6 /* LaunchScreen.xib */; };
@@ -19,6 +19,8 @@
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
 		C9DBEB1A1B083839000EF690 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB191B083839000EF690 /* Tools.m */; };
 		C9DBEB201B085296000EF690 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB1F1B085296000EF690 /* Menu.m */; };
+		C9E15DB41B5C6852005022F8 /* DetailViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E15DB31B5C6852005022F8 /* DetailViewBase.m */; };
+		C9E15DB71B5C6FC6005022F8 /* CafeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E15DB61B5C6FC6005022F8 /* CafeView.m */; };
 		C9EC064C1B0BA7F800709830 /* LocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EC064B1B0BA7F800709830 /* LocationFormatter.m */; };
 /* End PBXBuildFile section */
 
@@ -40,10 +42,10 @@
 		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C9B374D51B059BEF00BFD4B6 /* LocationTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTableController.h; sourceTree = "<group>"; };
-		C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTableController.m; sourceTree = "<group>"; };
-		C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C9B374D51B059BEF00BFD4B6 /* LocationTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTable.h; sourceTree = "<group>"; };
+		C9B374D61B059BEF00BFD4B6 /* LocationTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTable.m; sourceTree = "<group>"; };
+		C9B374D81B059BEF00BFD4B6 /* DiningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiningView.h; sourceTree = "<group>"; };
+		C9B374D91B059BEF00BFD4B6 /* DiningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiningView.m; sourceTree = "<group>"; };
 		C9B374DC1B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9B374E11B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +58,10 @@
 		C9DBEB191B083839000EF690 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		C9DBEB1E1B085296000EF690 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		C9DBEB1F1B085296000EF690 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		C9E15DB21B5C6852005022F8 /* DetailViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewBase.h; sourceTree = "<group>"; };
+		C9E15DB31B5C6852005022F8 /* DetailViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewBase.m; sourceTree = "<group>"; };
+		C9E15DB51B5C6FC6005022F8 /* CafeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeView.h; sourceTree = "<group>"; };
+		C9E15DB61B5C6FC6005022F8 /* CafeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeView.m; sourceTree = "<group>"; };
 		C9EC064A1B0BA7F800709830 /* LocationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationFormatter.h; sourceTree = "<group>"; };
 		C9EC064B1B0BA7F800709830 /* LocationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,18 +107,22 @@
 			children = (
 				C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */,
 				C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */,
-				C96868B71B12B80000BA2ED2 /* ErrorHandling.h */,
-				C96868B81B12B80000BA2ED2 /* ErrorHandling.m */,
-				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
-				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
-				C9EC064A1B0BA7F800709830 /* LocationFormatter.h */,
-				C9EC064B1B0BA7F800709830 /* LocationFormatter.m */,
-				C9B374D51B059BEF00BFD4B6 /* LocationTableController.h */,
-				C9B374D61B059BEF00BFD4B6 /* LocationTableController.m */,
+				C9B374D51B059BEF00BFD4B6 /* LocationTable.h */,
+				C9B374D61B059BEF00BFD4B6 /* LocationTable.m */,
+				C9E15DB21B5C6852005022F8 /* DetailViewBase.h */,
+				C9E15DB31B5C6852005022F8 /* DetailViewBase.m */,
+				C9B374D81B059BEF00BFD4B6 /* DiningView.h */,
+				C9B374D91B059BEF00BFD4B6 /* DiningView.m */,
+				C9E15DB51B5C6FC6005022F8 /* CafeView.h */,
+				C9E15DB61B5C6FC6005022F8 /* CafeView.m */,
 				C9DBEB1E1B085296000EF690 /* Menu.h */,
 				C9DBEB1F1B085296000EF690 /* Menu.m */,
-				C9B374D81B059BEF00BFD4B6 /* MenuViewController.h */,
-				C9B374D91B059BEF00BFD4B6 /* MenuViewController.m */,
+				C9EC064A1B0BA7F800709830 /* LocationFormatter.h */,
+				C9EC064B1B0BA7F800709830 /* LocationFormatter.m */,
+				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
+				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
+				C96868B71B12B80000BA2ED2 /* ErrorHandling.h */,
+				C96868B81B12B80000BA2ED2 /* ErrorHandling.m */,
 				C9DBEB181B083839000EF690 /* Tools.h */,
 				C9DBEB191B083839000EF690 /* Tools.m */,
 				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
@@ -254,12 +264,14 @@
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
 				C9DBEB201B085296000EF690 /* Menu.m in Sources */,
 				C9EC064C1B0BA7F800709830 /* LocationFormatter.m in Sources */,
-				C9B374D71B059BEF00BFD4B6 /* LocationTableController.m in Sources */,
+				C9B374D71B059BEF00BFD4B6 /* LocationTable.m in Sources */,
+				C9E15DB71B5C6FC6005022F8 /* CafeView.m in Sources */,
+				C9E15DB41B5C6852005022F8 /* DetailViewBase.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
 				C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */,
-				C9B374DA1B059BEF00BFD4B6 /* MenuViewController.m in Sources */,
+				C9B374DA1B059BEF00BFD4B6 /* DiningView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

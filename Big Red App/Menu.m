@@ -23,8 +23,7 @@
 @implementation Menu
 
 - (id)init {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _closed = false;
         menuItems = [NSMutableArray new];
     }
@@ -42,6 +41,5 @@
 - (int)menuItemCount {
     return (int)[menuItems count];
 }
-
 
 @end

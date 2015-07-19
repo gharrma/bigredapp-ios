@@ -3,7 +3,7 @@
 #import "Menu.h"
 #import "ErrorHandling.h"
 
-static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/";
+static NSString *const BASE_URL = @"http://tangerine-tious.rhcloud.com/";
 static int const TIMEOUT_INTERVAL = 10;
 
 
@@ -28,7 +28,10 @@ static int const TIMEOUT_INTERVAL = 10;
     return jsonObject;
 }
 
-+ (NSArray *)fetchDiningHallLocations:(NSError **)error {
+static NSArray *locationCache = nil; // TODO: Clear cache periodically
++ (NSArray *)fetchDiningLocations:(NSError **)error {
+    if (locationCache) return locationCache;
+    
     NSArray *locations = [self fetchJsonObjectAtPath:@"dining" error:error];
     if (*error) return nil;
     
@@ -37,10 +40,17 @@ static int const TIMEOUT_INTERVAL = 10;
         return nil;
     }
     
+    locationCache = locations;
     return locations;
 }
 
+static NSMutableDictionary *menuCache = nil; // TODO: Clear cache periodically
 + (NSDictionary *)fetchMenusForLocation:(NSString *)location error:(NSError **)error {
+    if (!menuCache)
+        menuCache = [NSMutableDictionary new];
+    if ([menuCache objectForKey:location])
+        return [menuCache objectForKey:location];
+    
     NSString *path = [NSString stringWithFormat:@"dining/menu/%@/Breakfast,Lunch,Dinner/LOCATIONS", location];
     NSDictionary *baseObject = [self fetchJsonObjectAtPath:path error:error];
     if (*error) return nil;
@@ -58,6 +68,7 @@ static int const TIMEOUT_INTERVAL = 10;
         [menus setValue:menu forKey:meal];
     }
     
+    [menuCache setValue:menus forKey:location];
     return menus;
 }
 
@@ -86,6 +97,11 @@ static int const TIMEOUT_INTERVAL = 10;
     }
     
     return menu;
+}
+
++ (void)clearCache {
+    locationCache = nil;
+    menuCache = nil;
 }
 
 @end
