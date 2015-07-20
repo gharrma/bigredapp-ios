@@ -17,10 +17,12 @@ Yes, this is the iOS version of [Genki Marshall's](https://github.com/genkimarsh
 ## General App Structure
 * All source files are in the "Big Red App" directory.
 * JSONRequests handles all requests for JSON objects from the RedAPI, and it helps parse these objects in order to display menus.
-* LocationTableController controls the table that displays a list of dining locations.
-* MenuViewController controls the view that displays the menu for a particular location.
-* Menu defines classes to help represent menus and menu items.
-* Tools defines a few constants shared between classes.
+* LocationTable displays a list of dining locations.
+* DiningView displays the menu for a particular dining location.
+* CafeView displays info for a particular café location.
+* Menu contains classes to represent menus and menu items.
+* Tools defines a few constants shared between classes (threads, colors, and more).
+* ErrorHandling provides several custom errors, and handy methods for displaying errors on-screen.
 * The UI structure/layout is housed in Main.storyboard, a standard nib file (in the Base.lproj directory).
 
 ## Other
