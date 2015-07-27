@@ -1,13 +1,12 @@
 #import "LocationTable.h"
 #import "DiningView.h"
 #import "JSONRequests.h"
-#import "LocationFormatter.h"
+#import "NameFormatter.h"
 #import "Tools.h"
-#import "ErrorHandling.h"
 @import UIKit;
 
-#define DINING_CELL_HEIGHT 58.0
-#define CAFE_CELL_HEIGHT 48.0
+#define DINING_CELL_HEIGHT 54.0
+#define CAFE_CELL_HEIGHT 44.0
 
 
 @interface LocationTable () {
@@ -42,7 +41,7 @@
         // Put each location identifier in the correct section (diningRooms vs. cafes)
         NSMutableArray *updatedDiningRooms = [NSMutableArray new], *updatedCafes = [NSMutableArray new];
         for (NSString *location in locations) {
-            NSMutableArray *correctSection = [LocationFormatter isDiningRoom:location] ? updatedDiningRooms : updatedCafes;
+            NSMutableArray *correctSection = [NameFormatter isDiningRoom:location] ? updatedDiningRooms : updatedCafes;
             [correctSection addObject:location];
         }
         
@@ -53,14 +52,11 @@
         
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
-            if (error) [ErrorHandling displayAlertForError:error fromViewController:self];
+            if (error) [self displayAlertForError:error withHandler:nil];
             else {
                 diningRooms = sortedDining;
                 cafes = sortedCafes;
                 [self.tableView reloadData];
-                
-                // Show latest update time
-                self.refreshControl.attributedTitle = [NSDate getLatestUpdateString];
             }
             
             [self.refreshControl endRefreshing];
@@ -77,20 +73,45 @@
     NSString *cellType = (indexPath.section == 0) ? @"DiningCell" : @"CafeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellType forIndexPath:indexPath];
     NSString *unformattedText = [(indexPath.section == 0 ? diningRooms : cafes) objectAtIndex:(int)indexPath.row];
-    NSString *formattedText = [LocationFormatter formatLocationName:unformattedText];
+    NSString *formattedText = [NameFormatter formatLocationName:unformattedText];
     cell.textLabel.text = formattedText;
     cell.textLabel.textColor = [UIColor cornellGrayColor];
     cell.detailTextLabel.textColor = [UIColor cornellGrayColor];
+    cell.detailTextLabel.text = nil; // TODO
     
     return cell;
 }
 
 // Prepare to transfer control to a menu view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
-    NSString *location = [locationType objectAtIndex:(int)indexPath.row];
-    [[segue destinationViewController] showDetailForLocation:location];
+    if ([segue.identifier isEqualToString:@"ShowDiningMenu"] || [segue.identifier isEqualToString:@"ShowCafeInfo"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSArray *locationType = indexPath.section == 0 ? diningRooms : cafes;
+        NSString *location = [locationType objectAtIndex:(int)indexPath.row];
+        [[segue destinationViewController] showDetailForLocation:location];
+    }
+}
+
+/* Show credits and info for the app. */
+- (IBAction)showAppInfo:(id)sender {
+    NSString *text = @"\n" // TODO: Check this text
+    "iOS\n"
+    "Matthew Gharrity\n\n"
+    
+    "Android\n"
+    "Genki Marshall & David Li\n\n"
+    
+    "API\n"
+    "Kevin Chavez\n\n"
+    
+    "Data\n"
+    "Cornell Dining";
+    
+    UIAlertController *info = [UIAlertController alertControllerWithTitle:@"Credits" message:text
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [info addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:info animated:YES completion:nil];
 }
 
 // Deselect selected cell when returning to this view

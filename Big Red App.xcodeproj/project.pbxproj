@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C96868B81B12B80000BA2ED2 /* ErrorHandling.m */; };
+		C9AF61B61B64ABB000EB0658 /* LocationData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9AF61B51B64ABB000EB0658 /* LocationData.json */; };
 		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
 		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
 		C9B374D71B059BEF00BFD4B6 /* LocationTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D61B059BEF00BFD4B6 /* LocationTable.m */; };
@@ -18,10 +18,9 @@
 		C9B374EE1B059BF000BFD4B6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374ED1B059BF000BFD4B6 /* Tests.m */; };
 		C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */; };
 		C9DBEB1A1B083839000EF690 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB191B083839000EF690 /* Tools.m */; };
-		C9DBEB201B085296000EF690 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DBEB1F1B085296000EF690 /* Menu.m */; };
 		C9E15DB41B5C6852005022F8 /* DetailViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E15DB31B5C6852005022F8 /* DetailViewBase.m */; };
 		C9E15DB71B5C6FC6005022F8 /* CafeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E15DB61B5C6FC6005022F8 /* CafeView.m */; };
-		C9EC064C1B0BA7F800709830 /* LocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EC064B1B0BA7F800709830 /* LocationFormatter.m */; };
+		C9EC064C1B0BA7F800709830 /* NameFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EC064B1B0BA7F800709830 /* NameFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C96868B71B12B80000BA2ED2 /* ErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandling.h; sourceTree = "<group>"; };
-		C96868B81B12B80000BA2ED2 /* ErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandling.m; sourceTree = "<group>"; };
+		C9AF61B51B64ABB000EB0658 /* LocationData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationData.json; sourceTree = "<group>"; };
 		C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Red App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374CF1B059BEF00BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,14 +54,12 @@
 		C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRequests.m; sourceTree = "<group>"; };
 		C9DBEB181B083839000EF690 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		C9DBEB191B083839000EF690 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
-		C9DBEB1E1B085296000EF690 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
-		C9DBEB1F1B085296000EF690 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		C9E15DB21B5C6852005022F8 /* DetailViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewBase.h; sourceTree = "<group>"; };
 		C9E15DB31B5C6852005022F8 /* DetailViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewBase.m; sourceTree = "<group>"; };
 		C9E15DB51B5C6FC6005022F8 /* CafeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeView.h; sourceTree = "<group>"; };
 		C9E15DB61B5C6FC6005022F8 /* CafeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeView.m; sourceTree = "<group>"; };
-		C9EC064A1B0BA7F800709830 /* LocationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationFormatter.h; sourceTree = "<group>"; };
-		C9EC064B1B0BA7F800709830 /* LocationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFormatter.m; sourceTree = "<group>"; };
+		C9EC064A1B0BA7F800709830 /* NameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameFormatter.h; sourceTree = "<group>"; };
+		C9EC064B1B0BA7F800709830 /* NameFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,14 +111,11 @@
 				C9B374D91B059BEF00BFD4B6 /* DiningView.m */,
 				C9E15DB51B5C6FC6005022F8 /* CafeView.h */,
 				C9E15DB61B5C6FC6005022F8 /* CafeView.m */,
-				C9DBEB1E1B085296000EF690 /* Menu.h */,
-				C9DBEB1F1B085296000EF690 /* Menu.m */,
-				C9EC064A1B0BA7F800709830 /* LocationFormatter.h */,
-				C9EC064B1B0BA7F800709830 /* LocationFormatter.m */,
+				C9EC064A1B0BA7F800709830 /* NameFormatter.h */,
+				C9EC064B1B0BA7F800709830 /* NameFormatter.m */,
 				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
 				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
-				C96868B71B12B80000BA2ED2 /* ErrorHandling.h */,
-				C96868B81B12B80000BA2ED2 /* ErrorHandling.m */,
+				C9AF61B51B64ABB000EB0658 /* LocationData.json */,
 				C9DBEB181B083839000EF690 /* Tools.h */,
 				C9DBEB191B083839000EF690 /* Tools.m */,
 				C9B374DB1B059BEF00BFD4B6 /* Main.storyboard */,
@@ -241,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AF61B61B64ABB000EB0658 /* LocationData.json in Resources */,
 				C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */,
 				C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */,
 				C9B374DF1B059BEF00BFD4B6 /* Images.xcassets in Resources */,
@@ -262,15 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */,
-				C9DBEB201B085296000EF690 /* Menu.m in Sources */,
-				C9EC064C1B0BA7F800709830 /* LocationFormatter.m in Sources */,
+				C9EC064C1B0BA7F800709830 /* NameFormatter.m in Sources */,
 				C9B374D71B059BEF00BFD4B6 /* LocationTable.m in Sources */,
 				C9E15DB71B5C6FC6005022F8 /* CafeView.m in Sources */,
 				C9E15DB41B5C6852005022F8 /* DetailViewBase.m in Sources */,
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
-				C96868B91B12B80000BA2ED2 /* ErrorHandling.m in Sources */,
 				C9B374DA1B059BEF00BFD4B6 /* DiningView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

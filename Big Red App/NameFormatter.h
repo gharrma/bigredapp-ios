@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface LocationFormatter : NSObject
+@interface NameFormatter : NSObject
 
 /** Remove underscores in a dining location name, capitalize first letters, and map to nicknames if applicable. */
 + (NSString *)formatLocationName:(NSString *)name;

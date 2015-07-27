@@ -2,16 +2,22 @@
 @class Meals;
 
 
-/** Provides methods for getting and encapsulating data from the RedAPI. 
+/** Provide methods for getting and encapsulating data from the RedAPI.
     All fetch requests should be made on a background thread. */
 @interface JSONRequests : NSObject
 
-/** Returns an array of strings corresponding to dining locations. */
+/** Return an array of strings corresponding to dining locations. */
 + (NSArray *)fetchDiningLocations:(NSError **)fetchError;
 
-/** Returns a dictionary filled with all menus for the day for a particular location.
+/** Return a dictionary filled with all menus for the day for a particular location.
     The dictionary is keyed with meal names (e.g., "Breakfast"). */
-+ (NSDictionary *)fetchMenusForLocation:(NSString *)location error:(NSError **)error;
++ (NSDictionary *)fetchMenusForDiningLocation:(NSString *)location error:(NSError **)error useCache:(BOOL)useCache;
+
+/** Return a string containing the menu for the given café. */
++ (NSString *)fetchMenuForCafeLocation:(NSString *)location error:(NSError **)error useCache:(BOOL)useCache;
+
+/** Return a description for the given location, or raise an error if not found. */
++ (NSString *)fetchDescriptionForLocation:(NSString *)location error:(NSError **)error;
 
 + (void)clearCache;
 

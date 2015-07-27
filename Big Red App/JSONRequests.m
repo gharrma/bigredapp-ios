@@ -1,13 +1,43 @@
 #import "JSONRequests.h"
 #import "Tools.h"
-#import "Menu.h"
-#import "ErrorHandling.h"
+#import "DiningView.h"
 
-static NSString *const BASE_URL = @"http://tangerine-tious.rhcloud.com/";
-static int const TIMEOUT_INTERVAL = 10;
 
+#pragma mark - Custom Errors
+
+static NSString
+*const JSON_ERROR_MESSAGE = @"There seems to be an issue with the server--hopefully a temporary one. You may try swiping down to refresh.",
+*const NO_MENU_MESSAGE = @"We cannot find a menu for this location.",
+*const NO_DESCRIPTION_FOUND_MESSAGE = @"We cannot find a description for this location.";
+
+@implementation NSError (ExtraErrors)
++ (NSError *)jsonError {
+    return [NSError errorWithDomain:@"JSON" code:0 userInfo:@{NSLocalizedDescriptionKey: JSON_ERROR_MESSAGE}];
+}
++ (NSError *)noMenuFound {
+    return [NSError errorWithDomain:@"Menu" code:0 userInfo:@{NSLocalizedDescriptionKey: NO_MENU_MESSAGE}];
+}
++ (NSError *)noDescriptionFound {
+    return [NSError errorWithDomain:@"Data" code:0 userInfo:@{NSLocalizedDescriptionKey: NO_DESCRIPTION_FOUND_MESSAGE}];
+}
+@end
+
+
+#pragma mark - Requests
+
+static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/";
+#define TIMEOUT_INTERVAL 10
+#define HALF_HOUR_IN_SECONDS 1800.0
+
+static NSMutableDictionary *menuCache = nil, *menuCacheTimeStamps = nil;
+static NSDictionary *locationData = nil;
 
 @implementation JSONRequests
+
++ (void)initialize {
+    menuCache = [NSMutableDictionary new];
+    menuCacheTimeStamps = [NSMutableDictionary new];
+}
 
 /** Return a collection object representing the JSON object found at the given path appended to base URL.
     This should be called while on a background thread! Precondition: error is initially null. */
@@ -21,17 +51,14 @@ static int const TIMEOUT_INTERVAL = 10;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:error];
     if (*error) return nil; // JSON error
     
-#ifdef DEBUG
+    #ifdef DEBUG
     NSLog(@"JSON object fetched:\n%@\n", jsonObject);
-#endif
+    #endif
     
     return jsonObject;
 }
 
-static NSArray *locationCache = nil; // TODO: Clear cache periodically
 + (NSArray *)fetchDiningLocations:(NSError **)error {
-    if (locationCache) return locationCache;
-    
     NSArray *locations = [self fetchJsonObjectAtPath:@"dining" error:error];
     if (*error) return nil;
     
@@ -40,16 +67,15 @@ static NSArray *locationCache = nil; // TODO: Clear cache periodically
         return nil;
     }
     
-    locationCache = locations;
     return locations;
 }
 
-static NSMutableDictionary *menuCache = nil; // TODO: Clear cache periodically
-+ (NSDictionary *)fetchMenusForLocation:(NSString *)location error:(NSError **)error {
-    if (!menuCache)
-        menuCache = [NSMutableDictionary new];
-    if ([menuCache objectForKey:location])
-        return [menuCache objectForKey:location];
++ (NSDictionary *)fetchMenusForDiningLocation:(NSString *)location error:(NSError **)error useCache:(BOOL)useCache {
+    NSDictionary *cached = [menuCache objectForKey:location];
+    if (useCache && cached) {
+        NSTimeInterval cachedAge = ABS([[menuCacheTimeStamps objectForKey:location] timeIntervalSinceNow]);
+        if (cachedAge < HALF_HOUR_IN_SECONDS) return cached;
+    }
     
     NSString *path = [NSString stringWithFormat:@"dining/menu/%@/Breakfast,Lunch,Dinner/LOCATIONS", location];
     NSDictionary *baseObject = [self fetchJsonObjectAtPath:path error:error];
@@ -68,6 +94,7 @@ static NSMutableDictionary *menuCache = nil; // TODO: Clear cache periodically
         [menus setValue:menu forKey:meal];
     }
     
+    [menuCacheTimeStamps setObject:[NSDate date] forKey:location];
     [menuCache setValue:menus forKey:location];
     return menus;
 }
@@ -99,9 +126,49 @@ static NSMutableDictionary *menuCache = nil; // TODO: Clear cache periodically
     return menu;
 }
 
++ (NSString *)fetchMenuForCafeLocation:(NSString *)location error:(NSError **)error useCache:(BOOL)useCache {
+    NSString *menu = [self getLocationData:@"menu" forLocation:location];
+    
+    if (!menu) {
+        *error = [NSError noMenuFound];
+        return nil;
+    }
+    
+    return menu;
+}
+
++ (NSString *)fetchDescriptionForLocation:(NSString *)location error:(NSError **)error {
+    NSString *description = [self getLocationData:@"description" forLocation:location];
+    
+    if (!description) {
+        *error = [NSError noDescriptionFound];
+        return nil;
+    }
+    
+    return [NSString stringWithFormat:@"\"%@\"\n\n\t - Cornell Dining", description];
+}
+
++ (NSString *)getLocationData:(NSString *)key forLocation:(NSString *)location {
+    if (!locationData) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"LocationData" ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        
+        NSError *error = nil;
+        locationData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (error) return nil;
+    }
+    
+    NSDictionary *specificLocation = [locationData objectForKey:location];
+    if (!specificLocation) return nil;
+    
+    NSString *ret = [specificLocation objectForKey:key];
+    return ret;
+}
+
 + (void)clearCache {
-    locationCache = nil;
-    menuCache = nil;
+    [menuCache removeAllObjects];
+    [menuCacheTimeStamps removeAllObjects];
+    locationData = nil;
 }
 
 @end

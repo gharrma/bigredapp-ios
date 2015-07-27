@@ -1,6 +1,6 @@
-#import "LocationFormatter.h"
+#import "NameFormatter.h"
 
-@implementation LocationFormatter
+@implementation NameFormatter
 
 + (NSString *)formatLocationName:(NSString *)name {
     
