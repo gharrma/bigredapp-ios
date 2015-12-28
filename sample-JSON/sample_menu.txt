@@ -1,0 +1,280 @@
+{
+    "robert_purcell_marketplace_eatery": {
+        "Breakfast": [
+            {
+                "category": "Soup Station",
+                "healthy": false,
+                "name": "Cornell Calico Cheese Soup"
+            },
+            {
+                "category": "Soup Station",
+                "healthy": true,
+                "name": "Hot Oatmeal"
+            },
+            {
+                "category": "Salad Bar Station",
+                "healthy": true,
+                "name": "Healthy Style Salad Station"
+            },
+            { 
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Tofu Vegetable Casserole"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Chicken And Dumplings"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Sausage"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "French Toast Batter"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": false,
+                "name": "Cheddar Cheese Scrambled Eggs"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": true,
+                "name": "Roasted Root Vegetables"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": false,
+                "name": "Homefried Potatoes"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "R - Ivy Sandwich Egg Cheese Saus"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "R - Pastry Special"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Potsticker Chicken Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Boa Pork Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Shrimp Shaumai Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Vegetarian Wok Pot Sticker"
+            },
+            {
+                "category": "Wok/Asian Station",
+                "healthy": false,
+                "name": "Pancake Bar"
+            },
+            {
+                "category": "Wok/Asian Station",
+                "healthy": false,
+                "name": "Omelet Bar"
+            }
+        ],
+        "Dinner": [
+            {
+                "category": "Soup Station",
+                "healthy": false,
+                "name": "Chef's Choice Soup"
+            },
+            {
+                "category": "Soup Station",
+                "healthy": false,
+                "name": "Cornell Calico Cheese Soup"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Pierogies with Sauteed Onions"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Baked Chicken"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": true,
+                "name": "Steamed Vegetable Melange"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": true,
+                "name": "Sauteed Vegetables"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": false,
+                "name": "St Wild And White  Rice"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "Hot Turkey Sandwiches"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "French Fries"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": true,
+                "name": "Grilled Chicken Breast"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "Burger Station"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "Garden Burger"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "Alfredo Sauce"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "Cheese Pizza"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "Pepperoni Pizza"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "Marinara Meat Sauce"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "Fresh Made Marinara Sauce"
+            },
+            {
+                "category": "Wok/Asian Station",
+                "healthy": false,
+                "name": "Make Your Own Mongolian Stir Fry"
+            }
+        ],
+        "Lunch": [
+            {
+                "category": "Soup Station",
+                "healthy": false,
+                "name": "Cornell Calico Cheese Soup"
+            },
+            {
+                "category": "Soup Station",
+                "healthy": true,
+                "name": "Hot Oatmeal"
+            },
+            {
+                "category": "Salad Bar Station",
+                "healthy": true,
+                "name": "Healthy Style Salad Station"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Tofu Vegetable Casserole"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Chicken And Dumplings"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "Sausage"
+            },
+            {
+                "category": "Hot Traditional Station - Entrees",
+                "healthy": false,
+                "name": "French Toast Batter"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": false,
+                "name": "Cheddar Cheese Scrambled Eggs"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": true,
+                "name": "Roasted Root Vegetables"
+            },
+            {
+                "category": "Hot Traditional Station - Sides",
+                "healthy": false,
+                "name": "Homefried Potatoes"
+            },
+            {
+                "category": "Grill Station",
+                "healthy": false,
+                "name": "R - Ivy Sandwich Egg Cheese Saus"
+            },
+            {
+                "category": "Pasta and Pizza Station",
+                "healthy": false,
+                "name": "R - Pastry Special"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Potsticker Chicken Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Boa Pork Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Shrimp Shaumai Dim Sum"
+            },
+            {
+                "category": "Specialty Station",
+                "healthy": false,
+                "name": "Vegetarian Wok Pot Sticker"
+            },
+            {
+                "category": "Wok/Asian Station",
+                "healthy": false,
+                "name": "Pancake Bar"
+            },
+            {
+                "category": "Wok/Asian Station",
+                "healthy": false,
+                "name": "Omelet Bar"
+            }
+        ]
+    }
+}

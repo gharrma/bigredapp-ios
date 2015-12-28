@@ -1,8 +1,15 @@
 # Big Red App for iOS
 
+## Update
+Just as this app was being reviewed for the App Store, Cornell released its own API and web app [here](https://now.dining.cornell.edu/eateries), making this app rather obsolete. Progress on the app will end, but the code will remain, waiting for a new purpose...
+
+## Photos
+<img src="images/credits.jpg" alt="Credits" width="265">
+<img src="images/locations.jpg" alt="Dining Locations" width="265">
+<img src="images/menu.jpg" alt="Menu" width="265">
+
+## Summary
 Yes, this is the iOS version of [Genki Marshall's](https://github.com/genkimarshall) [Big Red App](https://github.com/genkimarshall/bigredapp-android). As such, its goals are very similar.
- 
-## What
 * It's still a pain to find Cornell University dining hall info on the phone, so this is the iOS app to help with that.
 * We are using [Kevin Chavez](https://github.com/mrkev)'s API [here](http://redapi-tious.rhcloud.com/).
 
@@ -26,5 +33,5 @@ Yes, this is the iOS version of [Genki Marshall's](https://github.com/genkimarsh
 * The UI structure/layout is housed in Main.storyboard, a standard nib file (in the Base.lproj directory).
 
 ## Other
-* [Facebook Group for OpenSourceCornell](https://www.facebook.com/groups/opensourcecornell)
+* [Facebook group for OpenSourceCornell](https://www.facebook.com/groups/opensourcecornell)
 * Questions? Feel free to email me (Matthew Gharrity): mjg355

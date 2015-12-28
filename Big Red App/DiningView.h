@@ -23,4 +23,5 @@
 
 /** Controls the table that displays the menu for a particular dining location. */
 @interface DiningView : DetailViewBase
+- (void)showDetailForLocation:(NSString *)location;
 @end

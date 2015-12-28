@@ -5,8 +5,10 @@
 #import "Tools.h"
 @import UIKit;
 
-#define DINING_CELL_HEIGHT 54.0
-#define CAFE_CELL_HEIGHT 44.0
+#define DINING_CELL_HEIGHT 46.0
+#define CAFE_CELL_HEIGHT 42.0
+#define SECTION_HEADER_HEIGHT 26.0
+#define SECTION_HEADER_FONT_SIZE 18.0
 
 
 @interface LocationTable () {
@@ -92,28 +94,6 @@
     }
 }
 
-/* Show credits and info for the app. */
-- (IBAction)showAppInfo:(id)sender {
-    NSString *text = @"\n" // TODO: Check this text
-    "iOS\n"
-    "Matthew Gharrity\n\n"
-    
-    "Android\n"
-    "Genki Marshall & David Li\n\n"
-    
-    "API\n"
-    "Kevin Chavez\n\n"
-    
-    "Data\n"
-    "Cornell Dining";
-    
-    UIAlertController *info = [UIAlertController alertControllerWithTitle:@"Credits" message:text
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    [info addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:nil]];
-    [self presentViewController:info animated:YES completion:nil];
-}
-
 // Deselect selected cell when returning to this view
 - (void)viewWillAppear:(BOOL)animated {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -141,10 +121,16 @@
     return section == 0 ? @"Dining Rooms" : @"Cafés and Cafeterias";
 }
 
+// Provide the height of the headers.
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return SECTION_HEADER_HEIGHT;
+}
+
 // Adjust section header colors
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.tintColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    header.tintColor = [UIColor colorWithWhite:0.6 alpha:1.0];
+    header.textLabel.font = [UIFont systemFontOfSize:SECTION_HEADER_FONT_SIZE];
     [header.textLabel setTextColor:[UIColor whiteColor]];
 }
 

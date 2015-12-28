@@ -21,7 +21,7 @@
 #pragma mark - Data Updates
 
 - (void)showDetailForLocation:(NSString *)location {
-    [super showDetailForLocation:location];
+    [super showDetailFor:location withHeaderDetail:NO];
     [self requestData];
 }
 

@@ -8,7 +8,8 @@
 static NSString
 *const JSON_ERROR_MESSAGE = @"There seems to be an issue with the server--hopefully a temporary one. You may try swiping down to refresh.",
 *const NO_MENU_MESSAGE = @"We cannot find a menu for this location.",
-*const NO_DESCRIPTION_FOUND_MESSAGE = @"We cannot find a description for this location.";
+*const NO_DESCRIPTION_FOUND_MESSAGE = @"We cannot find a description for this location.",
+*const NO_SHORT_DESCRIPTION_FOUND_MESSAGE = @"We cannot find a short description for this location.";
 
 @implementation NSError (ExtraErrors)
 + (NSError *)jsonError {
@@ -20,12 +21,15 @@ static NSString
 + (NSError *)noDescriptionFound {
     return [NSError errorWithDomain:@"Data" code:0 userInfo:@{NSLocalizedDescriptionKey: NO_DESCRIPTION_FOUND_MESSAGE}];
 }
++ (NSError *)noShortDescriptionFound {
+    return [NSError errorWithDomain:@"Data" code:0 userInfo:@{NSLocalizedDescriptionKey: NO_SHORT_DESCRIPTION_FOUND_MESSAGE}];
+}
 @end
 
 
 #pragma mark - Requests
 
-static NSString *const BASE_URL = @"http://redapi-tious.rhcloud.com/";
+static NSString *const BASE_URL = @"https://redapi-tious.rhcloud.com/";
 #define TIMEOUT_INTERVAL 10
 #define HALF_HOUR_IN_SECONDS 1800.0
 
@@ -94,7 +98,9 @@ static NSDictionary *locationData = nil;
         [menus setValue:menu forKey:meal];
     }
     
-    [menuCacheTimeStamps setObject:[NSDate date] forKey:location];
+    NSDate *now = [NSDate date];
+    [menus setObject:now forKey:@"Date"];
+    [menuCacheTimeStamps setObject:now forKey:location];
     [menuCache setValue:menus forKey:location];
     return menus;
 }
@@ -135,6 +141,17 @@ static NSDictionary *locationData = nil;
     }
     
     return menu;
+}
+
++ (NSString *)fetchShortDescriptionForLocation:(NSString *)location error:(NSError **) error {
+    NSString *shortDescription = [self getLocationData:@"what" forLocation:location];
+    
+    if (!shortDescription) {
+        * error = [NSError noShortDescriptionFound];
+        return nil;
+    }
+    
+    return shortDescription;
 }
 
 + (NSString *)fetchDescriptionForLocation:(NSString *)location error:(NSError **)error {

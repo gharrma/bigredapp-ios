@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C97306A71B837B0B000AA7DA /* AppInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97306A61B837B0B000AA7DA /* AppInfoView.m */; };
+		C97306AD1B83DC41000AA7DA /* AppCredits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C97306AC1B83DC41000AA7DA /* AppCredits.rtf */; };
+		C97306AF1B841D8A000AA7DA /* AppInfo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C97306AE1B841D8A000AA7DA /* AppInfo.rtf */; };
 		C9AF61B61B64ABB000EB0658 /* LocationData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9AF61B51B64ABB000EB0658 /* LocationData.json */; };
 		C9B374D11B059BEF00BFD4B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D01B059BEF00BFD4B6 /* main.m */; };
 		C9B374D41B059BEF00BFD4B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B374D31B059BEF00BFD4B6 /* AppDelegate.m */; };
@@ -34,8 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C92D1D681B85665A00A7C64F /* BigRedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigRedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97306A51B837B0B000AA7DA /* AppInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoView.h; sourceTree = "<group>"; };
+		C97306A61B837B0B000AA7DA /* AppInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoView.m; sourceTree = "<group>"; };
+		C97306AC1B83DC41000AA7DA /* AppCredits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = AppCredits.rtf; sourceTree = "<group>"; };
+		C97306AE1B841D8A000AA7DA /* AppInfo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = AppInfo.rtf; sourceTree = "<group>"; };
+		C97CC40F1BC4DAF600B074D1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = "/Users/Matt/Projects/Big Red App/build/Debug-iphoneos/Tests.xctest"; sourceTree = "<absolute>"; };
 		C9AF61B51B64ABB000EB0658 /* LocationData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationData.json; sourceTree = "<group>"; };
-		C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Red App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374CF1B059BEF00BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B374D01B059BEF00BFD4B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9B374D21B059BEF00BFD4B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,7 +55,6 @@
 		C9B374DC1B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9B374DE1B059BEF00BFD4B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9B374E11B059BEF00BFD4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C9B374E71B059BF000BFD4B6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B374EC1B059BF000BFD4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B374ED1B059BF000BFD4B6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequests.h; sourceTree = "<group>"; };
@@ -85,17 +92,8 @@
 			children = (
 				C9B374CD1B059BEF00BFD4B6 /* Big Red App */,
 				C9B374EA1B059BF000BFD4B6 /* Tests */,
-				C9B374CC1B059BEF00BFD4B6 /* Products */,
+				C92D1D681B85665A00A7C64F /* BigRedApp.app */,
 			);
-			sourceTree = "<group>";
-		};
-		C9B374CC1B059BEF00BFD4B6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */,
-				C9B374E71B059BF000BFD4B6 /* Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C9B374CD1B059BEF00BFD4B6 /* Big Red App */ = {
@@ -111,10 +109,14 @@
 				C9B374D91B059BEF00BFD4B6 /* DiningView.m */,
 				C9E15DB51B5C6FC6005022F8 /* CafeView.h */,
 				C9E15DB61B5C6FC6005022F8 /* CafeView.m */,
+				C97306A51B837B0B000AA7DA /* AppInfoView.h */,
+				C97306A61B837B0B000AA7DA /* AppInfoView.m */,
 				C9EC064A1B0BA7F800709830 /* NameFormatter.h */,
 				C9EC064B1B0BA7F800709830 /* NameFormatter.m */,
 				C9B374FA1B06B80C00BFD4B6 /* JSONRequests.h */,
 				C9B374FB1B06B80C00BFD4B6 /* JSONRequests.m */,
+				C97306AE1B841D8A000AA7DA /* AppInfo.rtf */,
+				C97306AC1B83DC41000AA7DA /* AppCredits.rtf */,
 				C9AF61B51B64ABB000EB0658 /* LocationData.json */,
 				C9DBEB181B083839000EF690 /* Tools.h */,
 				C9DBEB191B083839000EF690 /* Tools.m */,
@@ -156,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9B374CA1B059BEF00BFD4B6 /* Big Red App */ = {
+		C9B374CA1B059BEF00BFD4B6 /* BigRedApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red App" */;
+			buildConfigurationList = C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "BigRedApp" */;
 			buildPhases = (
 				C9B374C71B059BEF00BFD4B6 /* Sources */,
 				C9B374C81B059BEF00BFD4B6 /* Frameworks */,
@@ -168,9 +170,9 @@
 			);
 			dependencies = (
 			);
-			name = "Big Red App";
+			name = BigRedApp;
 			productName = "Big Red App";
-			productReference = C9B374CB1B059BEF00BFD4B6 /* Big Red App.app */;
+			productReference = C92D1D681B85665A00A7C64F /* BigRedApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C9B374E61B059BF000BFD4B6 /* Tests */ = {
@@ -188,7 +190,7 @@
 			);
 			name = Tests;
 			productName = "Big Red AppTests";
-			productReference = C9B374E71B059BF000BFD4B6 /* Tests.xctest */;
+			productReference = C97CC40F1BC4DAF600B074D1 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +199,7 @@
 		C9B374C31B059BEF00BFD4B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Matthew Gharrity";
 				TargetAttributes = {
 					C9B374CA1B059BEF00BFD4B6 = {
@@ -210,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "Big Red App" */;
+			buildConfigurationList = C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "BigRedApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -219,11 +221,11 @@
 				Base,
 			);
 			mainGroup = C9B374C21B059BEF00BFD4B6;
-			productRefGroup = C9B374CC1B059BEF00BFD4B6 /* Products */;
+			productRefGroup = C9B374C21B059BEF00BFD4B6;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9B374CA1B059BEF00BFD4B6 /* Big Red App */,
+				C9B374CA1B059BEF00BFD4B6 /* BigRedApp */,
 				C9B374E61B059BF000BFD4B6 /* Tests */,
 			);
 		};
@@ -234,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97306AD1B83DC41000AA7DA /* AppCredits.rtf in Resources */,
+				C97306AF1B841D8A000AA7DA /* AppInfo.rtf in Resources */,
 				C9AF61B61B64ABB000EB0658 /* LocationData.json in Resources */,
 				C9B374DD1B059BEF00BFD4B6 /* Main.storyboard in Resources */,
 				C9B374E21B059BEF00BFD4B6 /* LaunchScreen.xib in Resources */,
@@ -263,6 +267,7 @@
 				C9B374FC1B06B80C00BFD4B6 /* JSONRequests.m in Sources */,
 				C9DBEB1A1B083839000EF690 /* Tools.m in Sources */,
 				C9B374D11B059BEF00BFD4B6 /* main.m in Sources */,
+				C97306A71B837B0B000AA7DA /* AppInfoView.m in Sources */,
 				C9B374DA1B059BEF00BFD4B6 /* DiningView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +285,7 @@
 /* Begin PBXTargetDependency section */
 		C9B374E91B059BF000BFD4B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C9B374CA1B059BEF00BFD4B6 /* Big Red App */;
+			target = C9B374CA1B059BEF00BFD4B6 /* BigRedApp */;
 			targetProxy = C9B374E81B059BF000BFD4B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -326,6 +331,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -378,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -389,12 +395,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Big Red App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "gharrma.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = BigRedApp;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -402,12 +412,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Big Red App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "gharrma.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = BigRedApp;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -425,6 +439,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MatthewGharrity.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
 			};
@@ -440,6 +455,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MatthewGharrity.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Red App.app/Big Red App";
 			};
@@ -448,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "Big Red App" */ = {
+		C9B374C61B059BEF00BFD4B6 /* Build configuration list for PBXProject "BigRedApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9B374EF1B059BF000BFD4B6 /* Debug */,
@@ -457,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "Big Red App" */ = {
+		C9B374F11B059BF000BFD4B6 /* Build configuration list for PBXNativeTarget "BigRedApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9B374F21B059BF000BFD4B6 /* Debug */,

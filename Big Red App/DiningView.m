@@ -4,8 +4,7 @@
 #import "NameFormatter.h"
 
 #define MENU_ITEM_CELL_HEIGHT 20.0
-#define CLOSED_CELL_HEIGHT 32.0
-#define LOCATION_CELL_HEIGHT 45.0
+#define CLOSED_CELL_HEIGHT 25.0
 
 
 #pragma mark - Dining View
@@ -38,7 +37,7 @@ NSArray *meals;
 #pragma mark - Data updates
 
 - (void)showDetailForLocation:(NSString *)location {
-    [super showDetailForLocation:location];
+    [super showDetailFor:location withHeaderDetail:YES];
     [activityIndicator startAnimating];
     [self requestMenuWithCache:YES];
 }
@@ -60,9 +59,16 @@ NSArray *meals;
         // Update view or report error
         dispatch_async(APPLICATION_THREAD, ^{
             if (menuError) [self displayAlertForError:menuError withHandler:^{
-                [self.navigationController popViewControllerAnimated:YES];
+                [self.navigationController popViewControllerAnimated:YES]; // TODO
             }];
-            else menus = updatedMenus;
+            else {
+                menus = updatedMenus;
+                NSDate *date = [menus objectForKey:@"Date"];
+                NSDateFormatter *dateFormatter = [NSDateFormatter new];
+                dateFormatter.timeStyle = NSDateFormatterNoStyle;
+                dateFormatter.dateStyle = NSDateFormatterLongStyle;
+                headerDetailLabel.text = [dateFormatter stringFromDate:date];
+            }
             
             if (!descriptionError)
                 description.text = descriptionText;
@@ -104,6 +110,10 @@ NSArray *meals;
     cell.backgroundColor = [UIColor cornellTanColor];
     
     return cell;
+}
+
+- (void)willEnterForeground {
+    
 }
 
 // Provide the height of a particular cell

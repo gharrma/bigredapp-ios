@@ -11,12 +11,12 @@ static UIColor *cornellRed, *cornellTan, *cornellGray;
     return cornellRed;
 }
 + (UIColor *)cornellTanColor {
-    // #d8d2c9
-    if (!cornellTan) cornellTan = [UIColor colorWithRed:216.0/255.0 green:210.0/255.0 blue:201.0/255.0 alpha:1.0];
+    // Officially this should be #d8d2c9, but it looks better a bit brighter
+    if (!cornellTan) cornellTan = [UIColor colorWithRed:226.0/255.0 green:218.0/255.0 blue:207.0/255.0 alpha:1.0];
     return cornellTan;
 }
 + (UIColor *)cornellGrayColor {
-    // ##222222
+    // #222222
     if (!cornellGray) cornellGray = [UIColor colorWithWhite:34.0/255.0 alpha:1.0];
     return cornellGray;
 }
